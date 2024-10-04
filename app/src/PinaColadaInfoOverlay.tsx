@@ -49,7 +49,7 @@ const PinaColadaInfoOverlay: React.FC<PinaColadaInfoOverlayProps> = ({ isOpen, o
             <div className="bg-white rounded-lg shadow-lg w-full max-w-4xl relative">
                 <button
                     onClick={onClose}
-                    className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+                    className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 z-10"
                 >
                     <MenuBarxIcon />
                 </button>

@@ -29,9 +29,9 @@ const HomePage: React.FC = () => {
         <div className="flex justify-start">
           <UnionIcon />
         </div>
-        <div 
-          className="flex justify-center cursor-pointer" 
-          onClick={handleMenuBarClick} 
+        <div
+          className="flex justify-center cursor-pointer z-10"
+          onClick={handleMenuBarClick}
           role="button"
           tabIndex={0}
           aria-label="Open menu"
@@ -65,9 +65,9 @@ const HomePage: React.FC = () => {
           </button>
         </div>
       </div>
-      <PinaColadaInfoOverlay 
-        isOpen={isOverlayOpen} 
-        onClose={() => setIsOverlayOpen(false)} 
+      <PinaColadaInfoOverlay
+        isOpen={isOverlayOpen}
+        onClose={() => setIsOverlayOpen(false)}
       />
     </div>
   );
