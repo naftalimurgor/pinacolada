@@ -2,10 +2,8 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import SpeakerIcon from './component/Icons/Speaker';
-import UnionIcon from './component/Icons/Union';
-import MenuBarIcon from './component/Icons/MenuBar';
 import PinaColadaInfoOverlay from './PinaColadaInfoOverlay';
+import NavigationBar from './component/NavigationBar';
 
 const HomePage: React.FC = () => {
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
@@ -25,23 +23,9 @@ const HomePage: React.FC = () => {
           alt="Pina Colada Island"
         />
       </div>
-      <div className="absolute top-0 left-0 w-full flex justify-between items-center p-4">
-        <div className="flex justify-start">
-          <UnionIcon />
-        </div>
-        <div 
-          className="flex justify-center cursor-pointer" 
-          onClick={handleMenuBarClick} 
-          role="button"
-          tabIndex={0}
-          aria-label="Open menu"
-        >
-          <MenuBarIcon />
-        </div>
-        <div className="flex justify-end">
-          <SpeakerIcon />
-        </div>
-      </div>
+
+      <NavigationBar onMenuClick={handleMenuBarClick} />
+
       <div className="relative z-1 flex flex-col items-center justify-between h-full text-center">
         <div className="flex flex-col items-center justify-center h-full">
           <span className="block text-5xl font-extrabold text-[#b8ff4f]">
@@ -65,6 +49,7 @@ const HomePage: React.FC = () => {
           </button>
         </div>
       </div>
+
       <PinaColadaInfoOverlay 
         isOpen={isOverlayOpen} 
         onClose={() => setIsOverlayOpen(false)} 
