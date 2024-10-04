@@ -16,7 +16,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ onMenuClick }) => {
         <UnionIcon />
       </div>
       <div
-        className="flex justify-center cursor-pointer"
+        className="flex justify-center cursor-pointer z-10"
         onClick={onMenuClick}
         role="button"
         tabIndex={0}
