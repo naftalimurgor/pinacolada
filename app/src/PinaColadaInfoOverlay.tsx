@@ -18,7 +18,7 @@ const PinaColadaInfoOverlay: React.FC<PinaColadaInfoOverlayProps> = ({ isOpen, o
             <div
                 className="bg-white bg-opacity-80 rounded-lg shadow-lg relative p-8"
                 style={{
-                    width: '1920px',
+                    width: '2020px',
                     height: '776px',
                     backgroundImage: 'url(/design-space-stained-paper.jpg), url(/paper.png)',
                     backgroundSize: 'cover, cover',
@@ -32,7 +32,7 @@ const PinaColadaInfoOverlay: React.FC<PinaColadaInfoOverlayProps> = ({ isOpen, o
                     style={{
                         position: 'absolute',
                         zIndex: 100,
-                        top: '-25px',
+                        top: '-140px',
                         right: '50%',
                         transform: 'translateX(50%)',
                     }}
