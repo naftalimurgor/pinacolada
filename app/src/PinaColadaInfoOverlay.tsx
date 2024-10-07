@@ -85,16 +85,16 @@ const PinaColadaInfoOverlay: React.FC<PinaColadaInfoOverlayProps> = ({ isOpen, o
                         </div>
                     </div>
 
-                    {/* Right Side: Archipelago and Map */}
                     <div>
-                        <h2 className="text-3xl font-extrabold mb-4">THE ARCHIPELAGOS</h2>
-                        <p className="mb-4 text-lg">
-                            Think of the Archipelagos as an island-hopping experience where you get to taste the best each island has to offer.
-                        </p>
-                        <p className="mb-4 text-lg">
-                            You can start by swapping with a Piña Colada flavor and end the day with a Liquid Staking Daiquiri.
-                        </p>
-
+                        <div style={{ maxWidth: '400px' }}>
+                            <h2 className="text-3xl font-extrabold mb-4">THE ARCHIPELAGOS</h2>
+                            <p className="mb-4 text-lg" style={{ maxWidth: '300px' }}>
+                                Think of the Archipelagos as an island-hopping experience where you get to taste the best each island has to offer.
+                            </p>
+                            <p className="mb-4 text-lg">
+                                You can start by swapping with a Piña Colada flavor and end the day with a Liquid Staking Daiquiri.
+                            </p>
+                        </div>
                         <div className="relative w-full h-64 mb-4">
                             <ArchipelagoMap
                                 onIslandHover={setHoveredIsland}
@@ -107,10 +107,17 @@ const PinaColadaInfoOverlay: React.FC<PinaColadaInfoOverlayProps> = ({ isOpen, o
                             )}
                         </div>
 
-                        <p className="mb-2 text-lg">
-                            We&apos;re on a mission to make your DeFi journey feel as enjoyable as a Caribbean vacation.
-                        </p>
-                        <p className="text-lg">More islands and experiences will be available shortly.</p>
+                        <div className="absolute bottom-24 right-24 text-left" style={{ maxWidth: '300px' }}>
+                            <p className="mb-2 text-lg">
+                                We&apos;re on a mission to make your DeFi journey feel as enjoyable as a Caribbean vacation.
+                            </p>
+                            <br/>
+                            <p className="text-lg">
+                                More islands and experiences will be available shortly.
+                            </p>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
