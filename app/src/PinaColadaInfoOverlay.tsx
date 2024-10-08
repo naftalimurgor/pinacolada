@@ -20,7 +20,7 @@ const PinaColadaInfoOverlay: React.FC<PinaColadaInfoOverlayProps> = ({ isOpen, o
                 style={{
                     width: '2020px',
                     height: '776px',
-                    backgroundImage: 'url(/design-space-stained-paper.jpg), url(/paper.png)',
+                    backgroundImage: 'url(/design-space-stained-paper.jpg), url(/paper.jpg)',
                     backgroundSize: 'cover, cover',
                     backgroundPosition: 'center, center',
                     backgroundRepeat: 'no-repeat, no-repeat',
