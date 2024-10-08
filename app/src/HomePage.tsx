@@ -4,13 +4,19 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import PinaColadaInfoOverlay from './PinaColadaInfoOverlay';
 import NavigationBar from './component/NavigationBar';
+import { useRouter } from 'next/navigation'; 
 
 const HomePage: React.FC = () => {
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+  const router = useRouter();
 
   const handleMenuBarClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     setIsOverlayOpen(true);
+  };
+
+  const handleButtonClick = () => {
+    router.push('/token'); 
   };
 
   return (
@@ -44,7 +50,10 @@ const HomePage: React.FC = () => {
           </div>
         </div>
         <div className="mb-40">
-          <button className="px-8 py-3 text-lg font-bold text-black bg-white rounded-[8px] shadow-lg hover:bg-[#e6b805] transition duration-300">
+          <button
+            onClick={handleButtonClick}
+            className="px-8 py-3 text-lg font-bold text-black bg-white rounded-[8px] shadow-lg hover:bg-[#e6b805] transition duration-300"
+          >
             Enter the &apos;DEX&apos; ISLAND
           </button>
         </div>
