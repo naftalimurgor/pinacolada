@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Tabs from './component/Tabs';
 import HeaderContent from './component/HeaderContent';
 
 const TokenSelector = ({ token, balance }) => (
