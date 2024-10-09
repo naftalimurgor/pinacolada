@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Tabs from './component/Tabs';
+import HeaderContent from './component/HeaderContent';
 
 const TokenSelector = ({ token, balance }) => (
   <div className="flex items-center space-x-2 bg-gray-100 rounded-full px-3 py-1">
@@ -21,28 +22,27 @@ const SwapInterface = () => {
       <div className="absolute inset-0">
         <Image
           src="/pinacoladaisland.png"
-          layout="fill"
-          objectFit="cover"
           alt="Background Image"
+          fill
+          style={{ objectFit: 'cover', zIndex: '-1' }}
         />
       </div>
 
       {/* Header */}
-      <div className="relative p-6">
-        <div className="flex justify-between items-center">
-          {/* Left: Logo or Icon */}
-          <div className="text-white font-extrabold text-lg">🍹</div>
+      <div
+        className="relative p-8 rounded-t-3xl"
+        style={{
+          width: '2050px',
+          height: '120px',
+          top: '8px',
+          left: '8px',
+          gap: '14px',
 
-          {/* Center: Menu Tabs */}
-          <Tabs />
-
-          {/* Right: Wallet Info */}
-          <div className="text-white flex items-center space-x-4">
-            <span className="text-sm">Wallet Name</span>
-            <div className="w-6 h-6 bg-green-400 rounded-full" />
-          </div>
-        </div>
+        }}
+      >
+        <HeaderContent />
       </div>
+
 
       {/* Main Swap Box */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full">

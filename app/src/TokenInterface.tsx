@@ -53,11 +53,6 @@ const TokenInterface: React.FC = () => {
           </div>
         </div>
       </div>
-
-
-
-
-
       {/* Content section */}
       <div className="px-8 py-12">
         <div className="grid grid-cols-4 gap-6">
