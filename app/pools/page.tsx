@@ -1,9 +1,10 @@
-import Tabs from "../src/component/Tabs";
+
+import PoolInterface from "../src/PoolInterface";
 
 const PoolPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Tabs />
+      <PoolInterface/>
     </div>
   )
 };
