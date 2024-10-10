@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import HeaderContent from './component/HeaderContent';
+import SwapUpDownIcon from './component/Icons/SwapUpDown';
 
 const TokenSelector = ({ token, balance }) => (
   <div className="flex items-center space-x-2 bg-gray-100 rounded-full px-3 py-1">
@@ -17,7 +18,6 @@ const SwapInterface = () => {
 
   return (
     <div className="relative w-full h-screen font-sans">
-      {/* Background Image */}
       <div className="absolute inset-0">
         <Image
           src="/pinacoladaisland.png"
@@ -27,7 +27,7 @@ const SwapInterface = () => {
         />
       </div>
 
-      {/* Header */}
+      {/* Header Section */}
       <div
         className="relative p-8 rounded-t-3xl"
         style={{
@@ -36,26 +36,25 @@ const SwapInterface = () => {
           top: '8px',
           left: '8px',
           gap: '14px',
-
         }}
       >
         <HeaderContent />
       </div>
 
+      {/* Title and Settings Section */}
+
 
       {/* Main Swap Box */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full">
-        <div className="bg-white bg-opacity-90 rounded-2xl shadow-xl p-8 w-96">
-          {/* Swap Header */}
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-4xl font-extrabold tracking-wide text-gray-900">
-              SWAP <span className="text-lime-500">TOKENS</span>
-            </h2>
-            <button onClick={() => setSlippageOpen(true)} className="p-2">
-              <div className="bg-gray-200 p-2 rounded-md shadow-md">⚙️</div>
-            </button>
-          </div>
-
+      <div className="relative z-10 flex flex-col items-center justify-center">
+      <div className="relative z-10 flex justify-between items-center px-8 mb-6">
+        <h2 className="text-4xl font-extrabold tracking-wide text-white">
+          SWAP <span className="text-lime-500">TOKENS</span>
+        </h2>
+        <button onClick={() => setSlippageOpen(true)} className="p-2">
+          <div className="bg-gray-200 p-2 rounded-md shadow-md">⚙️</div>
+        </button>
+      </div>
+        <div className="bg-white bg-opacity-90 rounded-2xl shadow-xl p-8 w-[480px]">
           {/* Token Inputs */}
           <div className="space-y-6">
             {/* First Token Input */}
@@ -77,7 +76,8 @@ const SwapInterface = () => {
 
             {/* Swap Icon */}
             <div className="flex justify-center my-2">
-              <button className="p-2 bg-white rounded-full shadow-lg">🔄</button>
+              {/* <button className="p-2 bg-white rounded-full shadow-lg">🔄</button> */}
+              <SwapUpDownIcon/>
             </div>
 
             {/* Second Token Input */}
@@ -103,7 +103,7 @@ const SwapInterface = () => {
         {/* Slippage Modal */}
         {slippageOpen && (
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <div className="bg-white rounded-2xl p-6 w-96 relative shadow-lg">
+            <div className="bg-white rounded-2xl p-6 w-[480px] relative shadow-lg">
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-xl font-bold">Slippage Tolerance</h3>
                 <button onClick={() => setSlippageOpen(false)}>
