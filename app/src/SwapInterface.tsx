@@ -6,9 +6,18 @@ import HeaderContent from './component/HeaderContent';
 import SwapUpDownIcon from './component/Icons/SwapUpDown';
 
 const TokenSelector = ({ token, balance }) => (
-  <div className="flex items-center space-x-2 bg-gray-100 rounded-full px-3 py-1">
-    <div className="w-6 h-6 bg-gray-300 rounded-full"></div>
-    <span className="font-semibold">{token}</span>
+  <div className="flex items-center space-x-2 rounded-lg px-4 py-2 w-36">
+    <div className="flex items-center space-x-2">
+      <Image
+        src="/pinacoladaisland.png" // Add the image path for the token logo
+        alt={token}
+        width={24}
+        height={24}
+        className="rounded-full"
+      />
+      <span className="font-semibold">{token}</span>
+      <span className="text-sm text-gray-500">▼</span> {/* Dropdown icon */}
+    </div>
   </div>
 );
 
@@ -41,57 +50,65 @@ const SwapInterface = () => {
         <HeaderContent />
       </div>
 
-      {/* Title and Settings Section */}
-
-
       {/* Main Swap Box */}
       <div className="relative z-10 flex flex-col items-center justify-center">
-      <div className="relative z-10 flex justify-between items-center px-8 mb-6">
-        <h2 className="text-4xl font-extrabold tracking-wide text-white">
-          SWAP <span className="text-lime-500">TOKENS</span>
-        </h2>
-        <button onClick={() => setSlippageOpen(true)} className="p-2">
-          <div className="bg-gray-200 p-2 rounded-md shadow-md">⚙️</div>
-        </button>
-      </div>
+        <div className="relative z-10 flex justify-between items-center px-8 mb-6">
+          <h2 className="text-4xl font-extrabold tracking-wide text-white">
+            SWAP <span className="text-lime-500">TOKENS</span>
+          </h2>
+          <button onClick={() => setSlippageOpen(true)} className="p-2">
+            <div className="bg-gray-200 p-2 rounded-md shadow-md">⚙️</div>
+          </button>
+        </div>
         <div className="bg-white bg-opacity-90 rounded-2xl shadow-xl p-8 w-[480px]">
           {/* Token Inputs */}
           <div className="space-y-6">
             {/* First Token Input */}
-            <div className="bg-gray-100 rounded-2xl p-4 flex flex-col">
-              <div className="flex justify-between items-center mb-2">
+            <div className="rounded-2xl p-4 flex justify-between items-center">
+              {/* Token Selector and Available Balance (Left side) */}
+              <div className="flex flex-col items-start">
                 <TokenSelector token="ATOM" balance="144,950.00" />
-                <span className="text-sm text-gray-500">Available: 144,950.00</span>
+                <span className="text-sm text-gray-500 mt-1">Available: 144,950.00</span> {/* Balance text aligned to the left */}
               </div>
-              <input
-                type="text"
-                placeholder="0"
-                className="w-full bg-transparent text-4xl font-extrabold focus:outline-none text-right"
-              />
-              <div className="flex justify-end space-x-2 mt-2">
-                <button className="text-sm text-gray-600 hover:underline">Half</button>
-                <button className="text-sm text-gray-600 hover:underline">Max</button>
+
+              {/* Input and Half/Max Buttons (Right side) */}
+              <div className="w-1/2 flex flex-col items-end">
+                <input
+                  type="text"
+                  placeholder="0"
+                  className="w-full bg-transparent text-4xl font-extrabold focus:outline-none text-right"
+                  style={{ borderBottom: '1px solid #E0E0E0' }}
+                />
+                <div className="flex space-x-2 mt-2">
+                  <button className="text-sm text-gray-600 hover:underline">Half</button>
+                  <button className="text-sm text-gray-600 hover:underline">Max</button>
+                </div>
               </div>
             </div>
 
             {/* Swap Icon */}
             <div className="flex justify-center my-2">
-              {/* <button className="p-2 bg-white rounded-full shadow-lg">🔄</button> */}
-              <SwapUpDownIcon/>
+              <SwapUpDownIcon />
             </div>
 
             {/* Second Token Input */}
-            <div className="bg-gray-100 rounded-2xl p-4 flex flex-col">
-              <div className="flex justify-between items-center mb-2">
-                <TokenSelector token="ARCH" balance="0.00" />
-                <span className="text-sm text-gray-500">Available: 0.00</span>
+            <div className="rounded-2xl p-4 flex justify-between items-center">
+              {/* Token Selector and Available Balance (Left side) */}
+              <div className="flex flex-col items-start">
+                <TokenSelector token="ATOM" balance="144,950.00" />
               </div>
-              <input
-                type="text"
-                placeholder="0"
-                className="w-full bg-transparent text-4xl font-extrabold focus:outline-none text-right"
-              />
+
+              {/* Input and Half/Max Buttons (Right side) */}
+              <div className="w-1/2 flex flex-col items-end">
+                <input
+                  type="text"
+                  placeholder="0"
+                  className="w-full bg-transparent text-4xl font-extrabold focus:outline-none text-right"
+                  style={{ borderBottom: '1px solid #E0E0E0' }}
+                />
+              </div>
             </div>
+
           </div>
 
           {/* Swap Button */}
@@ -141,7 +158,7 @@ const SwapInterface = () => {
           </div>
         )}
       </div>
-    </div>
+    </div >
   );
 };
 
