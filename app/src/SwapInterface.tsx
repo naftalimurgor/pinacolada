@@ -50,16 +50,59 @@ const SwapInterface = () => {
         <HeaderContent />
       </div>
 
+      {/* Title and Settings Section */}
+
+
+      {/* Slippage Modal */}
+ 
+
       {/* Main Swap Box */}
-      <div className="relative z-10 flex flex-col items-center justify-center">
-        <div className="relative z-10 flex justify-between items-center px-8 mb-6">
-          <h2 className="text-4xl font-extrabold tracking-wide text-white">
-            SWAP <span className="text-lime-500">TOKENS</span>
-          </h2>
-          <button onClick={() => setSlippageOpen(true)} className="p-2">
-            <div className="bg-gray-200 p-2 rounded-md shadow-md">⚙️</div>
-          </button>
+      <div className={`relative z-10 flex flex-col items-center justify-center ${slippageOpen ? 'mt-10' : 'mt-0'}`}>
+      <div className="relative z-10 flex justify-between items-center px-8 mb-6">
+        <h2 className="text-4xl font-extrabold tracking-wide text-white">
+          SWAP <span className="text-lime-500">TOKENS</span>
+        </h2>
+        <button onClick={() => setSlippageOpen(true)} className="p-2">
+          <div className="bg-gray-200 p-2 rounded-md shadow-md">⚙️</div>
+        </button>
+      </div>
+      {slippageOpen && (
+        <div className="relative z-20 w-[480px] bg-white rounded-2xl shadow-lg p-6 transition-all ease-in-out duration-300" style={{ top: '0px', marginBottom: '20px' }}>
+          <div className="flex justify-between items-center mb-4">
+            <h3 className="text-xl font-bold">Slippage Tolerance</h3>
+            <button onClick={() => setSlippageOpen(false)}>
+              <span className="text-gray-500 cursor-pointer">✖️</span>
+            </button>
+          </div>
+          <div className="flex space-x-2 mb-4">
+            {['2%', '3%', '4%'].map((value) => (
+              <button
+                key={value}
+                className="flex-1 py-2 border rounded-lg hover:bg-gray-100"
+                onClick={() => {
+                  setCustomSlippage(value);
+                  setSlippageOpen(false);
+                }}
+              >
+                {value}
+              </button>
+            ))}
+            <button
+              className="flex-1 py-2 border rounded-lg hover:bg-gray-100"
+              onClick={() => setCustomSlippage('')}
+            >
+              Custom
+            </button>
+          </div>
+          <input
+            type="text"
+            value={customSlippage}
+            onChange={(e) => setCustomSlippage(e.target.value)}
+            placeholder="Custom slippage amount"
+            className="w-full p-2 border rounded-lg"
+          />
         </div>
+      )}
         <div className="bg-white bg-opacity-90 rounded-2xl shadow-xl p-8 w-[480px]">
           {/* Token Inputs */}
           <div className="space-y-6">
@@ -95,7 +138,7 @@ const SwapInterface = () => {
             <div className="rounded-2xl p-4 flex justify-between items-center">
               {/* Token Selector and Available Balance (Left side) */}
               <div className="flex flex-col items-start">
-                <TokenSelector token="ATOM" balance="144,950.00" />
+                <TokenSelector token="ARCH" balance="0.00" />
               </div>
 
               {/* Input and Half/Max Buttons (Right side) */}
@@ -108,7 +151,6 @@ const SwapInterface = () => {
                 />
               </div>
             </div>
-
           </div>
 
           {/* Swap Button */}
@@ -116,49 +158,8 @@ const SwapInterface = () => {
             Swap
           </button>
         </div>
-
-        {/* Slippage Modal */}
-        {slippageOpen && (
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <div className="bg-white rounded-2xl p-6 w-[480px] relative shadow-lg">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-bold">Slippage Tolerance</h3>
-                <button onClick={() => setSlippageOpen(false)}>
-                  <span className="text-gray-500 cursor-pointer">✖️</span>
-                </button>
-              </div>
-              <div className="flex space-x-2 mb-4">
-                {['2%', '3%', '4%'].map((value) => (
-                  <button
-                    key={value}
-                    className="flex-1 py-2 border rounded-lg hover:bg-gray-100"
-                    onClick={() => {
-                      setCustomSlippage(value);
-                      setSlippageOpen(false);
-                    }}
-                  >
-                    {value}
-                  </button>
-                ))}
-                <button
-                  className="flex-1 py-2 border rounded-lg hover:bg-gray-100"
-                  onClick={() => setCustomSlippage('')}
-                >
-                  Custom
-                </button>
-              </div>
-              <input
-                type="text"
-                value={customSlippage}
-                onChange={(e) => setCustomSlippage(e.target.value)}
-                placeholder="Custom slippage amount"
-                className="w-full p-2 border rounded-lg"
-              />
-            </div>
-          </div>
-        )}
       </div>
-    </div >
+    </div>
   );
 };
 
