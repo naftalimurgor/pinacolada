@@ -1,6 +1,7 @@
-"use client";
-import React, { useState } from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
 import HeaderSmall from './component/HeaderSmall';
+import HeaderPool from './component/HeaderPool';
 
 const FilterSidebar = () => {
   return (
@@ -44,27 +45,46 @@ const PoolList = ({ pools, onSelect }) => {
 
 const PoolInterface = () => {
   const [selectedPool, setSelectedPool] = useState(null);
-  const [activeTab, setActiveTab] = useState('all'); // Track active tab (default to 'all')
+  const [activeTab, setActiveTab] = useState('all');
+  const [showSmallHeader, setShowSmallHeader] = useState(false); // State to toggle header
   
   const pools = [
     { name: 'ARCH - AXV', apr: '16%', liquidity: '$75M', fees: '0.45-0.35', volume: '$2M' },
     { name: 'ATOM - AXV', apr: '16%', liquidity: '$75M', fees: '0.45-0.35', volume: '$2M' },
     { name: 'ARCH - Osmo', apr: '16%', liquidity: '$75M', fees: '0.45-0.35', volume: '$2M' },
-    // Add more pool data as needed...
   ];
 
-  // Simulating 'My Pools' data
   const myPools = [
     { name: 'ARCH - AXV', apr: '16%', liquidity: '$50M', fees: '0.40', volume: '$1.5M' },
   ];
 
+  // Handle tab switch
   const handleTabClick = (tab) => {
-    setActiveTab(tab); // Update active tab
+    setActiveTab(tab);
   };
+
+  // Scroll effect to switch between headers
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) { // Set the scroll threshold to 100px
+        setShowSmallHeader(true);
+      } else {
+        setShowSmallHeader(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className="relative w-full h-screen font-sans">
-      <HeaderSmall />
+      {/* Switch header based on scroll */}
+      {showSmallHeader ? <HeaderSmall /> : <HeaderPool />}
+
       <div className="flex h-full">
         <FilterSidebar />
 
