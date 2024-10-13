@@ -15,22 +15,22 @@ function Tabs() {
             {/* Tokens Tab */}
             <Link href="/token">
                 <button
-                    className={`px-6 py-3 rounded-full flex items-center justify-center border ${
+                    className={`px-6 py-3 rounded-full flex items-center justify-center border transition-all duration-300 ease-in-out ${
                         pathname === '/token'
                             ? 'bg-white text-black border-white shadow-md' 
                             : 'bg-white bg-opacity-10 text-white border-transparent opacity-50' 
                     }`}
                     style={{ width: '120px' }} 
                 >
-                    <CircleIcon className={`${pathname === '/token' ? 'text-black' : 'text-white'}`} /> {/* Icon color changes based on active state */}
-                    <span className={`ml-2 ${pathname === '/token' ? 'text-black' : 'text-white'}`}>Tokens</span> {/* Text color changes based on active state */}
+                    <CircleIcon className={`${pathname === '/token' ? 'text-black' : 'text-white'}`} />
+                    <span className={`ml-2 ${pathname === '/token' ? 'text-black' : 'text-white'}`}>Tokens</span>
                 </button>
             </Link>
 
             {/* Swap Tab */}
             <Link href="/swap">
                 <button
-                    className={`px-6 py-3 rounded-full flex items-center justify-center border ${
+                    className={`px-6 py-3 rounded-full flex items-center justify-center border transition-all duration-300 ease-in-out ${
                         pathname === '/swap'
                             ? 'bg-white text-black border-white shadow-md' 
                             : 'bg-white bg-opacity-10 text-white border-transparent opacity-50' 
@@ -45,7 +45,7 @@ function Tabs() {
             {/* Pools Tab */}
             <Link href="/pools">
                 <button
-                    className={`px-6 py-3 rounded-full flex items-center justify-center border ${
+                    className={`px-6 py-3 rounded-full flex items-center justify-center border transition-all duration-300 ease-in-out ${
                         pathname === '/pools'
                             ? 'bg-white text-black border-white shadow-md' 
                             : 'bg-white bg-opacity-10 text-white border-transparent opacity-50' 
