@@ -24,17 +24,16 @@ const HeaderPool: React.FC = () => {
             >
                 <HeaderContent />
 
-                <div className="flex justify-between items-center p-28">
-                    <div className="flex items-start flex-col">
+
+                <div className="flex justify-between items-center px-8 py-20">
+                    {/* Left Section: Piña Colada Title */}
+                    <div className="flex flex-col items-start">
                         <h1 className="text-5xl font-bold text-white">Piña Colada</h1>
                         <h2 className="text-4xl font-bold text-green-400">POOLS</h2>
                     </div>
-                    <div
-                        className="flex-grow flex justify-center space-x-8 text-center"
-                        style={{
-                            marginRight: '350px',
-                        }}
-                    >
+
+                    {/* Center Section: Liquidity and Volume */}
+                    <div className="flex space-x-16 text-center"  style={{marginRight: '650px'}}>
                         <div>
                             <p className="text-4xl font-bold text-white">$75,624,989</p>
                             <p className="text-md text-gray-200">Total Liquidity</p>
@@ -48,9 +47,8 @@ const HeaderPool: React.FC = () => {
                             <p className="text-md text-gray-200">Total Volume</p>
                         </div>
                     </div>
-
-
                 </div>
+
             </div>
         </div>
     );
