@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -11,9 +11,9 @@ const TokenSelector = ({ token, balance }) => (
   <div className="flex items-center space-x-2 rounded-lg px-4 py-2 w-36">
     <div className="flex items-center space-x-2">
       <Image
-        src="/pinacoladaisland.png" // Add the image path for the token logo
+        src="/pinacoladaisland.png"
         alt={token}
-        width={24}
+        width={22}
         height={24}
         className="rounded-full"
       />
@@ -28,77 +28,77 @@ const SwapInterface = () => {
   const [customSlippage, setCustomSlippage] = useState('');
 
   return (
-    <div className="relative w-full h-screen font-sans">
-      <div className="absolute inset-0">
-        <Image
-          src="/pinacoladaisland.png"
-          alt="Background Image"
-          fill
-          style={{ objectFit: 'cover', zIndex: '-1' }}
-        />
-      </div>
-
+    <div className="relative w-full h-screen font-sans"
+    style={{
+      width: '2050px',
+      height: '100vh',
+      top: '8px',
+      left: '8px',
+      gap: '14px',
+      borderRadius: '16px',
+      backgroundImage: 'url(/pinacoladaisland.png)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+  }}
+    >
       {/* Header Section */}
-      <div
-        className="relative p-8 rounded-t-3xl"
-        style={{
-          width: '2050px',
-          height: '120px',
-          top: '8px',
-          left: '8px',
-          gap: '14px',
-        }}
-      >
+      <div className="relative p-8 rounded-t-3xl">
         <HeaderContent />
       </div>
 
       {/* Main Swap Box */}
       <div className={`relative z-10 flex flex-col items-center justify-center ${slippageOpen ? 'mt-10' : 'mt-0'}`}>
-      <div className="relative z-10 flex justify-between items-center px-8 mb-6">
-        <h2 className="text-4xl font-extrabold tracking-wide text-white">
-          SWAP <span className="text-lime-500">TOKENS</span>
-        </h2>
-        <button onClick={() => setSlippageOpen(true)} className="p-2">
-          <SliderIcon/>
-        </button>
-      </div>
-      {slippageOpen && (
-        <div className="relative z-20 w-[480px] bg-white rounded-2xl shadow-lg p-6 transition-all ease-in-out duration-300" style={{ top: '0px', marginBottom: '20px' }}>
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="text-xl font-bold">Slippage Tolerance</h3>
-            <button onClick={() => setSlippageOpen(false)}>
-              <XIcon/>
-            </button>
-          </div>
-          <div className="flex space-x-2 mb-4">
-            {['2%', '3%', '4%'].map((value) => (
-              <button
-                key={value}
-                className="flex-1 py-2 border rounded-lg hover:bg-gray-100"
-                onClick={() => {
-                  setCustomSlippage(value);
-                  setSlippageOpen(false);
-                }}
-              >
-                {value}
-              </button>
-            ))}
-            <button
-              className="flex-1 py-2 border rounded-lg hover:bg-gray-100"
-              onClick={() => setCustomSlippage('')}
-            >
-              Custom
-            </button>
-          </div>
-          <input
-            type="text"
-            value={customSlippage}
-            onChange={(e) => setCustomSlippage(e.target.value)}
-            placeholder="Custom slippage amount"
-            className="w-full p-2 border rounded-lg"
-          />
+        <div className="relative z-10 flex justify-between items-center px-8 mb-6">
+          <h2 className="text-4xl font-extrabold tracking-wide text-white">
+            SWAP <span className="text-lime-500">TOKENS</span>
+          </h2>
+          <button onClick={() => setSlippageOpen(true)} className="p-2">
+            <SliderIcon />
+          </button>
         </div>
-      )}
+
+        {slippageOpen && (
+          <div
+            className="relative z-20 w-[480px] bg-white rounded-2xl shadow-lg p-6 transition-all ease-in-out duration-300"
+            style={{ top: '0px', marginBottom: '20px' }}
+          >
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-xl font-bold">Slippage Tolerance</h3>
+              <button onClick={() => setSlippageOpen(false)}>
+                <XIcon />
+              </button>
+            </div>
+            <div className="flex space-x-2 mb-4">
+              {['2%', '3%', '4%'].map((value) => (
+                <button
+                  key={value}
+                  className="flex-1 py-2 border rounded-lg hover:bg-gray-100"
+                  onClick={() => {
+                    setCustomSlippage(value);
+                    setSlippageOpen(false);
+                  }}
+                >
+                  {value}
+                </button>
+              ))}
+              <button
+                className="flex-1 py-2 border rounded-lg hover:bg-gray-100"
+                onClick={() => setCustomSlippage('')}
+              >
+                Custom
+              </button>
+            </div>
+            <input
+              type="text"
+              value={customSlippage}
+              onChange={(e) => setCustomSlippage(e.target.value)}
+              placeholder="Custom slippage amount"
+              className="w-full p-2 border rounded-lg"
+            />
+          </div>
+        )}
+
         <div className="bg-white bg-opacity-90 rounded-2xl shadow-xl p-8 w-[480px]">
           {/* Token Inputs */}
           <div className="space-y-6">
@@ -107,7 +107,9 @@ const SwapInterface = () => {
               {/* Token Selector and Available Balance (Left side) */}
               <div className="flex flex-col items-start">
                 <TokenSelector token="ATOM" balance="144,950.00" />
-                <span className="text-sm text-gray-500 mt-1">Available: 144,950.00</span> {/* Balance text aligned to the left */}
+                <span className="text-sm text-gray-500 mt-1">
+                  Available: 144,950.00
+                </span>
               </div>
 
               {/* Input and Half/Max Buttons (Right side) */}
