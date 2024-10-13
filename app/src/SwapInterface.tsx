@@ -52,12 +52,6 @@ const SwapInterface = () => {
         <HeaderContent />
       </div>
 
-      {/* Title and Settings Section */}
-
-
-      {/* Slippage Modal */}
- 
-
       {/* Main Swap Box */}
       <div className={`relative z-10 flex flex-col items-center justify-center ${slippageOpen ? 'mt-10' : 'mt-0'}`}>
       <div className="relative z-10 flex justify-between items-center px-8 mb-6">
