@@ -32,7 +32,7 @@ const TokenInterface: React.FC = () => {
         <div
           className="relative p-8 rounded-t-3xl"
           style={{
-            width: "2050px",
+            width: '99%',
             height: "302px",
             top: "8px",
             left: "8px",

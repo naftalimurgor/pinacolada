@@ -10,7 +10,7 @@ const HeaderPool: React.FC = () => {
             <div
                 className="relative p-8 rounded-t-3xl"
                 style={{
-                    width: '100%',
+                    width: '99%',
                     height: '300px',
                     top: '8px',
                     left: '8px',

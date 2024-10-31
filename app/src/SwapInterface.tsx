@@ -29,18 +29,18 @@ const SwapInterface = () => {
 
   return (
     <div className="relative w-full h-screen font-sans"
-    style={{
-      width: '2050px',
-      height: '100vh',
-      top: '8px',
-      left: '8px',
-      gap: '14px',
-      borderRadius: '16px',
-      backgroundImage: 'url(/pinacoladaisland.png)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-  }}
+      style={{
+        width: '99%',
+        height: '100vh',
+        top: '8px',
+        left: '8px',
+        gap: '14px',
+        borderRadius: '16px',
+        backgroundImage: 'url(/pinacoladaisland.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
       {/* Header Section */}
       <div className="relative p-8 rounded-t-3xl">

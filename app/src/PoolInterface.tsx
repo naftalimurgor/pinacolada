@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import HeaderSmall from "./component/HeaderSmall";
-import HeaderPool from "./component/HeaderPool"; 
+import HeaderPool from "./component/HeaderPool";
 
 const FilterSidebar = () => {
   return (
@@ -59,7 +59,7 @@ const PoolInterface = () => {
   const [selectedPool, setSelectedPool] = useState(null);
   const [activeTab, setActiveTab] = useState("all"); // Track active tab (default to 'all')
   const [showSmallHeader, setShowSmallHeader] = useState(false); // State to track which header to show
-  
+
   const pools = [
     { name: "ARCH - AXV", apr: "16%", liquidity: "$75M", fees: "0.45-0.35", volume: "$2M" },
     { name: "ATOM - AXV", apr: "16%", liquidity: "$75M", fees: "0.45-0.35", volume: "$2M" },
@@ -106,17 +106,15 @@ const PoolInterface = () => {
           <div className="flex border-b mb-4">
             <button
               onClick={() => handleTabClick("my")}
-              className={`px-4 py-2 font-semibold ${
-                activeTab === "my" ? "border-b-2 border-green-600 text-green-600" : "text-gray-500"
-              }`}
+              className={`px-4 py-2 font-semibold ${activeTab === "my" ? "border-b-2 border-green-600 text-green-600" : "text-gray-500"
+                }`}
             >
               My Pools
             </button>
             <button
               onClick={() => handleTabClick("all")}
-              className={`px-4 py-2 font-semibold ml-4 ${
-                activeTab === "all" ? "border-b-2 border-green-600 text-green-600" : "text-gray-500"
-              }`}
+              className={`px-4 py-2 font-semibold ml-4 ${activeTab === "all" ? "border-b-2 border-green-600 text-green-600" : "text-gray-500"
+                }`}
             >
               All Pools
             </button>
