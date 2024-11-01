@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PoolList from "./component/PoolList";
 
 interface Pool {
@@ -9,7 +9,7 @@ interface Pool {
   liquidity: string;
   fees: string;
   volume: string;
-  imageUrls: string[]; // Updated to an array of image URLs
+  imageUrls: string[];
 }
 
 const PoolTabsInterface: React.FC = () => {
@@ -57,6 +57,17 @@ const PoolTabsInterface: React.FC = () => {
             <PoolList pools={myPools} onSelect={setSelectedPool} />
           ) : (
             <PoolList pools={pools} onSelect={setSelectedPool} />
+          )}
+
+          {/* Display selected pool details if a pool is selected */}
+          {selectedPool && (
+            <div className="mt-6 p-4 border rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold mb-2">{selectedPool.name}</h3>
+              <p><strong>APR:</strong> {selectedPool.apr}</p>
+              <p><strong>Liquidity:</strong> {selectedPool.liquidity}</p>
+              <p><strong>Fees:</strong> {selectedPool.fees}</p>
+              <p><strong>24h Volume:</strong> {selectedPool.volume}</p>
+            </div>
           )}
         </div>
       </div>
