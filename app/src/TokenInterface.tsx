@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import HeaderContent from "./component/HeaderContent";
 import HeaderSmall from "./component/HeaderSmall";
-import HeaderPool from "./component/HeaderPool";
 
 const TokenInterface: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");

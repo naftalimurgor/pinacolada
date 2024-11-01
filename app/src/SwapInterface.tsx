@@ -90,7 +90,9 @@ const SwapInterface = () => {
             <div className="rounded-2xl p-4 flex justify-between items-center">
               {/* Token Selector and Available Balance (Left side) */}
               <div className="flex flex-col items-start">
-                <TokenSelector token="ATOM" balance="144,950.00" />
+                <TokenSelector token="ATOM" balance="144,950.00" onTokenChange={function (newToken: string): void {
+                  throw new Error('Function not implemented.');
+                }} />
                 <span className="text-sm text-gray-500 mt-1">
                   Available: 144,950.00
                 </span>
@@ -101,26 +103,42 @@ const SwapInterface = () => {
                 <input
                   type="text"
                   placeholder="0"
-                  className="w-full bg-transparent text-4xl font-extrabold focus:outline-none text-right"
-                  style={{ borderBottom: '1px solid #E0E0E0' }}
+                  className="w-full bg-transparent text-2xl focus:outline-none text-right border border-gray-300 rounded-lg p-2 h-10 placeholder-black"
                 />
                 <div className="flex space-x-2 mt-2">
                   <button className="text-sm text-gray-600 hover:underline">Half</button>
                   <button className="text-sm text-gray-600 hover:underline">Max</button>
                 </div>
               </div>
+
+
             </div>
 
             {/* Swap Icon */}
-            <div className="flex justify-center my-2">
-              <SwapUpDownIcon />
+            <div className="flex justify-center my-2 relative">
+              <div className="absolute top-1/2 transform -translate-y-1/2 w-full h-px bg-gray-300"></div>
+              <button
+                className="bg-white p-2 w-12 h-12 flex items-center justify-center rounded-lg shadow-md relative z-10" // Ensure button is above
+                style={{
+                  width: '48px',
+                  height: '48px',
+                  padding: '0 16px',
+                  borderRadius: '8px',
+                }}
+              >
+                <SwapUpDownIcon />
+              </button>
             </div>
+
+
 
             {/* Second Token Input */}
             <div className="rounded-2xl p-4 flex justify-between items-center">
               {/* Token Selector and Available Balance (Left side) */}
               <div className="flex flex-col items-start">
-                <TokenSelector token="ARCH" balance="0.00" />
+                <TokenSelector token="ARCH" balance="0.00" onTokenChange={function (newToken: string): void {
+                  throw new Error('Function not implemented.');
+                }} />
               </div>
 
               {/* Input and Half/Max Buttons (Right side) */}
@@ -128,18 +146,18 @@ const SwapInterface = () => {
                 <input
                   type="text"
                   placeholder="0"
-                  className="w-full bg-transparent text-4xl font-extrabold focus:outline-none text-right"
-                  style={{ borderBottom: '1px solid #E0E0E0' }}
+                  className="w-full bg-transparent text-2xl focus:outline-none text-right border border-none rounded-lg p-2 h-10 placeholder-black"
                 />
               </div>
             </div>
           </div>
 
           {/* Swap Button */}
-          <button className="w-full bg-lime-500 text-white py-3 rounded-lg mt-6 font-bold text-lg hover:bg-lime-600 transition duration-300 shadow-lg">
-            Swap
-          </button>
+
         </div>
+        <button className="w-[480px] bg-lime-500 text-black py-3 rounded-lg mt-6 font-bold text-lg hover:bg-lime-600 transition duration-300 shadow-lg">
+          Swap
+        </button>
       </div>
     </div>
   );
