@@ -15,7 +15,6 @@ const PinaColadaInfoOverlay: React.FC<PinaColadaInfoOverlayProps> = ({ isOpen, o
 
     return (
         <div className="fixed inset-0 bg-sky-200 bg-opacity-80 z-50 flex items-center justify-center p-4">
-            {/* Close Icon - Positioning it at the top of the overlay */}
             <div
                 onClick={onClose}
                 className="absolute top-8 right-8 p-2 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 z-50 cursor-pointer"

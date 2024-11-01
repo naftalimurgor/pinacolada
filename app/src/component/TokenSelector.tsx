@@ -13,7 +13,7 @@ interface TokenSelectorProps {
     onTokenChange: (newToken: string) => void;
 }
 
-const TokenSelector: React.FC<TokenSelectorProps> = ({ token, onTokenChange }) => {
+const TokenSelector: React.FC<TokenSelectorProps> = ({  onTokenChange }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedToken, setSelectedToken] = useState<Token | null>(null);
@@ -34,7 +34,7 @@ const TokenSelector: React.FC<TokenSelectorProps> = ({ token, onTokenChange }) =
         setSelectedToken(token);
         onTokenChange(token.name);
         setIsOpen(false);
-        setSearchQuery(""); 
+        setSearchQuery("");
     };
 
     return (
@@ -63,7 +63,6 @@ const TokenSelector: React.FC<TokenSelectorProps> = ({ token, onTokenChange }) =
                             className="w-full bg-transparent focus:outline-none text-center"
                         />
                         <FaSearch className="text-gray-400" />
-
                     </div>
 
                     <div className="max-h-60 overflow-y-auto space-y-2">
