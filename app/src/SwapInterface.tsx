@@ -118,7 +118,7 @@ const SwapInterface = () => {
             <div className="flex justify-center my-2 relative">
               <div className="absolute top-1/2 transform -translate-y-1/2 w-full h-px bg-gray-300"></div>
               <button
-                className="bg-white p-2 w-12 h-12 flex items-center justify-center rounded-lg shadow-md relative z-10" // Ensure button is above
+                className="bg-white p-2 w-12 h-12 flex items-center justify-center rounded-lg shadow-md relative z-1" 
                 style={{
                   width: '48px',
                   height: '48px',
