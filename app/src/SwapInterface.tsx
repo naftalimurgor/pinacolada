@@ -1,27 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import HeaderContent from './component/HeaderContent';
 import SwapUpDownIcon from './component/Icons/SwapUpDown';
 import XIcon from './component/Icons/XIcon';
 import SliderIcon from './component/Icons/Slider';
-
-const TokenSelector = ({ token, balance }) => (
-  <div className="flex items-center space-x-2 rounded-lg px-4 py-2 w-36">
-    <div className="flex items-center space-x-2">
-      <Image
-        src="/pinacoladaisland.png"
-        alt={token}
-        width={22}
-        height={24}
-        className="rounded-full"
-      />
-      <span className="font-semibold">{token}</span>
-      <span className="text-sm text-gray-500">▼</span> {/* Dropdown icon */}
-    </div>
-  </div>
-);
+import TokenSelector from './component/TokenSelector';
 
 const SwapInterface = () => {
   const [slippageOpen, setSlippageOpen] = useState(false);
@@ -99,7 +83,7 @@ const SwapInterface = () => {
           </div>
         )}
 
-        <div className="bg-white bg-opacity-90 rounded-2xl shadow-xl p-8 w-[480px]">
+        <div className="bg-white bg-white rounded-2xl shadow-xl p-8 w-[480px]">
           {/* Token Inputs */}
           <div className="space-y-6">
             {/* First Token Input */}
