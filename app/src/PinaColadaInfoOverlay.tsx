@@ -15,31 +15,33 @@ const PinaColadaInfoOverlay: React.FC<PinaColadaInfoOverlayProps> = ({ isOpen, o
 
     return (
         <div className="fixed inset-0 bg-sky-200 bg-opacity-80 z-50 flex items-center justify-center p-4">
+            {/* Close Icon - Positioning it at the top of the overlay */}
+            <div
+                onClick={onClose}
+                className="absolute top-8 right-8 p-2 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 z-50 cursor-pointer"
+                style={{
+                    top: '10px',
+                    right: '50%',
+                    transform: 'translateX(50%)',
+                }}
+            >
+                <MenuBarxIcon />
+            </div>
+
+            {/* Main Content Container */}
             <div
                 className="bg-white bg-opacity-80 rounded-lg shadow-lg relative p-8"
                 style={{
-                    width: '2020px',
-                    height: '776px',
-                    backgroundImage: 'url(/design-space-stained-paper.jpg), url(/paper.jpg)',
-                    backgroundSize: 'cover, cover',
-                    backgroundPosition: 'center, center',
-                    backgroundRepeat: 'no-repeat, no-repeat',
+                    width: '90%',
+                    height: '97%',
+                    top: '100px',
+                    backgroundImage: 'url(/paper.png)', 
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    clipPath: 'inset(10px 20px 10px 20px)',
                 }}
             >
-                <div
-                    onClick={onClose}
-                    className="absolute top-4 right-4 p-2 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 z-50"
-                    style={{
-                        position: 'absolute',
-                        zIndex: 100,
-                        top: '-140px',
-                        right: '50%',
-                        transform: 'translateX(50%)',
-                    }}
-                >
-                    <MenuBarxIcon />
-                </div>
-
                 <div className="grid grid-cols-[1fr_2fr] gap-6">
                     <div>
                         <h2 className="text-3xl font-extrabold mb-4">ABOUT PIÑA COLADA</h2>
@@ -111,13 +113,11 @@ const PinaColadaInfoOverlay: React.FC<PinaColadaInfoOverlayProps> = ({ isOpen, o
                             <p className="mb-2 text-lg">
                                 We&apos;re on a mission to make your DeFi journey feel as enjoyable as a Caribbean vacation.
                             </p>
-                            <br/>
+                            <br />
                             <p className="text-lg">
                                 More islands and experiences will be available shortly.
                             </p>
                         </div>
-
-
                     </div>
                 </div>
             </div>
