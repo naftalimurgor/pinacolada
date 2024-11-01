@@ -12,11 +12,13 @@ interface Pool {
   imageUrls: string[];
 }
 
-const PoolTabsInterface: React.FC = () => {
-  const [selectedPool, setSelectedPool] = useState<Pool | null>(null);
+interface PoolTabsInterfaceProps {
+  onSelectPool: (pool: Pool) => void;
+}
+
+const PoolTabsInterface: React.FC<PoolTabsInterfaceProps> = ({ onSelectPool }) => {
   const [activeTab, setActiveTab] = useState("all");
 
-  // Sample pool data with two images per pool
   const pools: Pool[] = [
     { name: "ARCH - AXV", apr: "16%", liquidity: "$75M", fees: "0.45-0.35", volume: "$2M", imageUrls: ["/archipelago.png", "/cosmos.png"] },
     { name: "ATOM - AXV", apr: "16%", liquidity: "$75M", fees: "0.45-0.35", volume: "$2M", imageUrls: ["/cosmos.png", "/archipelago.png"] },
@@ -54,20 +56,9 @@ const PoolTabsInterface: React.FC = () => {
             </button>
           </div>
           {activeTab === "my" ? (
-            <PoolList pools={myPools} onSelect={setSelectedPool} />
+            <PoolList pools={myPools} onSelect={onSelectPool} />
           ) : (
-            <PoolList pools={pools} onSelect={setSelectedPool} />
-          )}
-
-          {/* Display selected pool details if a pool is selected */}
-          {selectedPool && (
-            <div className="mt-6 p-4 border rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">{selectedPool.name}</h3>
-              <p><strong>APR:</strong> {selectedPool.apr}</p>
-              <p><strong>Liquidity:</strong> {selectedPool.liquidity}</p>
-              <p><strong>Fees:</strong> {selectedPool.fees}</p>
-              <p><strong>24h Volume:</strong> {selectedPool.volume}</p>
-            </div>
+            <PoolList pools={pools} onSelect={onSelectPool} />
           )}
         </div>
       </div>
