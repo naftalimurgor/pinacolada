@@ -28,8 +28,8 @@ const HeaderPool: React.FC = () => {
                 <div className="flex justify-between items-center px-8 py-20">
                     {/* Left Section: Piña Colada Title */}
                     <div className="flex flex-col items-start">
-                        <h1 className="text-5xl font-bold text-white">Piña Colada</h1>
-                        <h2 className="text-4xl font-bold text-green-400">POOLS</h2>
+                        <h1 className="text-3xl font-bold text-white">Piña Colada</h1>
+                        <h2 className="text-2xl font-bold text-green-400">POOLS</h2>
                     </div>
 
                     {/* Center Section: Liquidity and Volume */}
