@@ -27,9 +27,9 @@ const ArchipelagoMap: React.FC<ArchipelagoMapProps> = ({ onIslandHover, onIsland
         >
             <IslandOne onHover={function (): void {
                 throw new Error('Function not implemented.');
-            } } onLeave={function (): void {
+            }} onLeave={function (): void {
                 throw new Error('Function not implemented.');
-            } } />
+            }} />
         </div>
 
         <div
@@ -45,9 +45,9 @@ const ArchipelagoMap: React.FC<ArchipelagoMapProps> = ({ onIslandHover, onIsland
         >
             <IslandTwo onHover={function (): void {
                 throw new Error('Function not implemented.');
-            } } onLeave={function (): void {
+            }} onLeave={function (): void {
                 throw new Error('Function not implemented.');
-            } } />
+            }} />
         </div>
 
         <div
@@ -63,26 +63,26 @@ const ArchipelagoMap: React.FC<ArchipelagoMapProps> = ({ onIslandHover, onIsland
         >
             <IslandThree onHover={function (): void {
                 throw new Error('Function not implemented.');
-            } } onLeave={function (): void {
+            }} onLeave={function (): void {
                 throw new Error('Function not implemented.');
-            } } />
+            }} />
         </div>
         <div
             className="absolute cursor-pointer"
             style={{
-                width: '180px', // last one 
+                width: '180px',
                 height: '180px',
-                top: '30px', 
-                left: '720px' 
+                top: '30px',
+                left: '720px'
             }}
             onMouseEnter={() => onIslandHover('Rum Island')}
             onMouseLeave={onIslandLeave}
         >
             <IslandFour onHover={function (): void {
                 throw new Error('Function not implemented.');
-            } } onLeave={function (): void {
+            }} onLeave={function (): void {
                 throw new Error('Function not implemented.');
-            } } />
+            }} />
         </div>
 
         <div
@@ -98,9 +98,9 @@ const ArchipelagoMap: React.FC<ArchipelagoMapProps> = ({ onIslandHover, onIsland
         >
             <IslandFive onHover={function (): void {
                 throw new Error('Function not implemented.');
-            } } onLeave={function (): void {
+            }} onLeave={function (): void {
                 throw new Error('Function not implemented.');
-            } } />
+            }} />
         </div>
 
         <div
@@ -116,9 +116,9 @@ const ArchipelagoMap: React.FC<ArchipelagoMapProps> = ({ onIslandHover, onIsland
         >
             <IslandSix onHover={function (): void {
                 throw new Error('Function not implemented.');
-            } } onLeave={function (): void {
+            }} onLeave={function (): void {
                 throw new Error('Function not implemented.');
-            } } />
+            }} />
         </div>
 
         <div
@@ -134,9 +134,9 @@ const ArchipelagoMap: React.FC<ArchipelagoMapProps> = ({ onIslandHover, onIsland
         >
             <IslandSeven onHover={function (): void {
                 throw new Error('Function not implemented.');
-            } } onLeave={function (): void {
+            }} onLeave={function (): void {
                 throw new Error('Function not implemented.');
-            } } />
+            }} />
         </div>
 
         <div
@@ -152,9 +152,9 @@ const ArchipelagoMap: React.FC<ArchipelagoMapProps> = ({ onIslandHover, onIsland
         >
             <IslandEight onHover={function (): void {
                 throw new Error('Function not implemented.');
-            } } onLeave={function (): void {
+            }} onLeave={function (): void {
                 throw new Error('Function not implemented.');
-            } } />
+            }} />
         </div>
     </div>
 );
