@@ -4,19 +4,19 @@ import UnionIcon from './Icons/Union';
 
 const HeaderContent: React.FC = () => {
     return (
-        <div className="flex justify-between items-center">
-            <div className="text-white font-extrabold text-lg">
+        <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
+            <div className="text-white font-extrabold text-lg flex items-center justify-center lg:justify-start w-full lg:w-auto">
                 <UnionIcon />
             </div>
-
-            <Tabs />
-
-            <div className="text-black flex items-center space-x-4">
-                <div className="text-right">
-                    <span className="block text-sm font-semibold">Wallet Name</span>
+            <div className="flex-1 w-full lg:w-auto flex justify-center lg:justify-center">
+                <Tabs />
+            </div>
+            <div className="flex items-center space-x-2 lg:space-x-4 text-black w-full lg:w-auto justify-center lg:justify-end">
+                <div className="text-right hidden sm:block">
+                    <span className="block text-xs lg:text-sm font-semibold">Wallet Name</span>
                     <span className="block text-xs text-gray-500">archway1akqp...8g3xu</span>
                 </div>
-                <div className="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center text-white font-bold">
+                <div className="w-6 h-6 lg:w-8 lg:h-8 bg-green-400 rounded-full flex items-center justify-center text-white font-bold">
                     AC
                 </div>
             </div>
