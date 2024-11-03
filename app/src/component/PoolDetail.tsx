@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import {
     Chart as ChartJS,
@@ -10,7 +10,9 @@ import {
     Tooltip,
     Legend,
 } from "chart.js";
+
 import { Line } from "react-chartjs-2";
+import PoolModal from "./PoolModal";
 import InfoIcon from '../component/Icons/Info';
 
 ChartJS.register(
@@ -36,6 +38,9 @@ interface PoolDetailProps {
 }
 
 const PoolDetail: React.FC<PoolDetailProps> = ({ pool, onBack }) => {
+
+    const [isModalOpen, setModalOpen] = useState(false);
+
     const data = {
         labels: ["28/07/2023", "29/07/2023", "30/07/2023", "31/07/2023", "01/08/2023", "02/08/2023"],
         datasets: [
@@ -43,7 +48,7 @@ const PoolDetail: React.FC<PoolDetailProps> = ({ pool, onBack }) => {
                 label: "Liquidity",
                 data: [120, 150, 200, 180, 220, 160],
                 fill: false,
-                borderColor: "#000000", 
+                borderColor: "#000000",
                 tension: 0.1,
             },
         ],
@@ -51,8 +56,14 @@ const PoolDetail: React.FC<PoolDetailProps> = ({ pool, onBack }) => {
 
     return (
         <div className="p-6">
-            <button onClick={onBack} className="text-blue-600 hover:underline mb-4">← Back</button>
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <button
+                onClick={onBack}
+                className="flex items-center px-4 py-2 text-black font-semibold bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+            >
+                <span className="mr-1">←</span> Back
+            </button>
+
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-4">
 
                 <div className="lg:col-span-1">
                     <div className="p-6 bg-white rounded-xl border border-gray-200 shadow-sm">
@@ -91,14 +102,56 @@ const PoolDetail: React.FC<PoolDetailProps> = ({ pool, onBack }) => {
                             </div>
                         </div>
                     </div>
-                    <button className="bg-lime-500 text-white px-4 py-2 rounded-lg font-semibold w-full mt-4">
+                    <button
+                        onClick={() => setModalOpen(true)}
+                        className="text-black px-4 py-2 rounded-lg font-semibold w-full mt-4 bg-[#ADFF00]"
+                    >
                         Add Liquidity
                     </button>
+
+                    {/* Modal for Adding Liquidity */}
+                    <PoolModal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
+                        <h2 className="text-xl font-bold mb-4">Add Liquidity to Pool</h2>
+                        <p className="text-sm text-gray-500 mb-4">Choose between Double Sided or Single Sided.</p>
+                        <div className="flex justify-between mb-6">
+                            <button className="px-4 py-2 font-semibold text-gray-700 bg-gray-100 rounded-lg">Double Sided</button>
+                            <button className="px-4 py-2 font-semibold text-gray-700 bg-gray-100 rounded-lg">Single Sided</button>
+                        </div>
+
+                        {/* Form fields similar to the modal on the right in your image */}
+                        <div className="space-y-4">
+                            <div className="flex items-center space-x-2">
+                                <Image src="/arch.png" alt="ARCH" width={24} height={24} />
+                                <input className="border rounded-lg px-3 py-2 w-full" type="number" placeholder="0" />
+                            </div>
+                            <div className="flex items-center space-x-2">
+                                <Image src="/axv.png" alt="AXV" width={24} height={24} />
+                                <input className="border rounded-lg px-3 py-2 w-full" type="number" placeholder="0" />
+                            </div>
+                        </div>
+
+                        {/* Other modal content like "Pool Ratio," "My Liquidity," etc. */}
+                        <div className="space-y-4">
+                            <div className="flex items-center space-x-2">
+                                <p>nullice</p>
+                                <p>nullice</p>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                                <p>nullice</p>
+                                <p>nullice</p>
+                            </div>
+                        </div>
+
+                        <div className="flex justify-between mt-6">
+                            <button onClick={() => setModalOpen(false)} className="text-gray-600 font-semibold">Cancel</button>
+                            <button className="px-4 py-2 font-semibold text-white bg-[#ADFF00] rounded-lg">Add Liquidity</button>
+                        </div>
+                    </PoolModal>
                 </div>
                 <div className="lg:col-span-3 p-6 bg-white rounded-xl border border-gray-200 shadow-lg">
                     <div className="flex justify-between items-center mb-4">
                         <div className="flex space-x-4">
-                            <button className="text-blue-600 font-semibold">Volume</button>
+                            <button className="flex items-center px-6 py-3 text-black font-semibold bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200">Volume</button>
                             <button className="text-gray-500 font-semibold">Liquidity</button>
                         </div>
                         <select className="text-gray-500 border rounded-lg p-2">
