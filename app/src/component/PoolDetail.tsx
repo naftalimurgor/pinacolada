@@ -11,8 +11,7 @@ import {
     Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-
-import InfoIcon from '../component/Icons/Info'
+import InfoIcon from '../component/Icons/Info';
 
 ChartJS.register(
     CategoryScale,
@@ -99,7 +98,7 @@ const PoolDetail: React.FC<PoolDetailProps> = ({ pool, onBack }) => {
                 </div>
 
 
-                <div className="lg:col-span-3 p-6 bg-white rounded-lg shadow-lg">
+                <div className="lg:col-span-3 p-6 bg-white rounded-xl border border-gray-200 shadow-lg">
                     <div className="flex justify-between items-center mb-4">
                         <div className="flex space-x-4">
                             <button className="text-blue-600 font-semibold">Volume</button>
@@ -111,7 +110,44 @@ const PoolDetail: React.FC<PoolDetailProps> = ({ pool, onBack }) => {
                             <option>90 Days</option>
                         </select>
                     </div>
-                    <Line data={data} />
+                    <div className="overflow-hidden rounded-lg">
+                        <Line
+                            data={data}
+                            options={{
+                                responsive: true,
+                                plugins: {
+                                    legend: { display: false },
+                                    tooltip: {
+                                        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                                        titleFont: { size: 12 },
+                                        bodyFont: { size: 14 },
+                                        padding: 10,
+                                        displayColors: false,
+                                    },
+                                },
+                                scales: {
+                                    x: { grid: { display: false }, ticks: { font: { size: 12 } } },
+                                    y: { grid: { color: "#E5E7EB" }, ticks: { font: { size: 12 } } }
+                                },
+                                elements: {
+                                    point: {
+                                        radius: 5,
+                                        hoverRadius: 7,
+                                        hoverBackgroundColor: '#4F46E5',
+                                        borderWidth: 2,
+                                        hitRadius: 10,
+                                        pointStyle: 'circle',
+                                    }
+                                },
+                                onHover: (event, chartElement) => {
+                                    const target = event.native?.target as HTMLCanvasElement;
+                                    if (target) {
+                                        target.style.cursor = chartElement[0] ? 'pointer' : 'default';
+                                    }
+                                }
+                            }}
+                        />
+                    </div>
                 </div>
 
             </div>
