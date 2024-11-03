@@ -84,19 +84,14 @@ const SwapInterface = () => {
         )}
 
         <div className="bg-white rounded-2xl shadow-xl p-8 w-[480px]">
-          {/* Token Inputs */}
           <div className="space-y-6">
-            {/* First Token Input */}
             <div className="rounded-2xl p-4 flex justify-between items-center">
-              {/* Token Selector and Available Balance (Left side) */}
               <div className="flex flex-col items-start">
                 <TokenSelector token="ATOM" onTokenChange={(newToken) => console.log("Token changed to:", newToken)} />
                 <span className="text-sm text-gray-500 mt-1">
                   Available: 144,950.00
                 </span>
               </div>
-
-              {/* Input and /Max Buttons (Right side) */}
               <div className="w-1/2 flex flex-col items-end">
                 <input
                   type="text"
@@ -110,7 +105,6 @@ const SwapInterface = () => {
               </div>
             </div>
 
-            {/* Swap Icon */}
             <div className="flex justify-center my-2 relative">
               <div className="absolute top-1/2 transform -translate-y-1/2 w-full h-px bg-gray-300"></div>
               <button
