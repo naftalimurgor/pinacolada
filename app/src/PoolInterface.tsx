@@ -27,7 +27,7 @@ const PoolInterface: React.FC = () => {
   }, []);
 
   const handleBackClick = () => {
-    setSelectedPool(null); 
+    setSelectedPool(null);
   };
 
   return (
