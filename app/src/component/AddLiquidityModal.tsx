@@ -1,6 +1,6 @@
 import React from 'react';
 import XIcon from './Icons/XIcon';
-import Image from 'next/image';
+import TokenSelector from './TokenSelector';
 
 interface AddLiquidityModalProps {
     isOpen: boolean;
@@ -28,14 +28,45 @@ const AddLiquidityModal: React.FC<AddLiquidityModalProps> = ({ isOpen, onClose }
                     </button>
                 </div>
 
-                <div className="space-y-4">
-                    <div className="flex items-center space-x-2">
-                        <Image src="/archipelago.png" alt="ARCH" width={24} height={24} />
-                        <input className="border rounded-lg px-3 py-2 w-full" type="number" placeholder="0" />
+                <div className="rounded-2xl p-4 flex justify-between items-center">
+                    {/* Token Selector and Available Balance (Left side) */}
+                    <div className="flex flex-col items-start">
+                        <TokenSelector token="ATOM" onTokenChange={(newToken) => console.log("Token changed to:", newToken)} />
+                        <span className="text-sm text-gray-500 mt-1">
+                            Available: 144,950.00
+                        </span>
                     </div>
-                    <div className="flex items-center space-x-2">
-                        <Image src="/archipelago.png" alt="AXV" width={24} height={24} />
-                        <input className="border rounded-lg px-3 py-2 w-full" type="number" placeholder="0" />
+
+                    {/* Input and /Max Buttons (Right side) */}
+                    <div className="w-1/2 flex flex-col items-end">
+                        <input
+                            type="text"
+                            placeholder="0"
+                            className="w-full bg-transparent text-2xl focus:outline-none text-right border border-gray-300 rounded-lg p-2 h-10 placeholder-black"
+                        />
+                        <div className="flex space-x-2 mt-2">
+                            <button className="text-sm text-gray-600 hover:underline">Half</button>
+                            <button className="text-sm text-gray-600 hover:underline">Max</button>
+                        </div>
+                    </div>
+                </div>
+                <div className="rounded-2xl p-4 flex justify-between items-center">
+                    <div className="flex flex-col items-start">
+                        <TokenSelector token="ATOM" onTokenChange={(newToken) => console.log("Token changed to:", newToken)} />
+                        <span className="text-sm text-gray-500 mt-1">
+                            Available: 144,950.00
+                        </span>
+                    </div>
+                    <div className="w-1/2 flex flex-col items-end">
+                        <input
+                            type="text"
+                            placeholder="0"
+                            className="w-full bg-transparent text-2xl focus:outline-none text-right border border-gray-300 rounded-lg p-2 h-10 placeholder-black"
+                        />
+                        <div className="flex space-x-2 mt-2">
+                            <button className="text-sm text-gray-600 hover:underline">Half</button>
+                            <button className="text-sm text-gray-600 hover:underline">Max</button>
+                        </div>
                     </div>
                 </div>
                 <div className="space-y-4 mt-4">
