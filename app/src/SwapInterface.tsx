@@ -96,7 +96,7 @@ const SwapInterface = () => {
                 </span>
               </div>
 
-              {/* Input and Half/Max Buttons (Right side) */}
+              {/* Input and /Max Buttons (Right side) */}
               <div className="w-1/2 flex flex-col items-end">
                 <input
                   type="text"
@@ -136,7 +136,7 @@ const SwapInterface = () => {
                 </span>
               </div>
 
-              {/* Input and Half/Max Buttons (Right side) */}
+              {/* Input and /Max Buttons (Right side) */}
               <div className="w-1/2 flex flex-col items-end">
                 <input
                   type="text"
@@ -148,7 +148,7 @@ const SwapInterface = () => {
           </div>
 
           {/* Swap Button */}
-          <button className="w-[480px] bg-lime-500 text-black py-3 rounded-lg mt-6 font-bold text-lg hover:bg-lime-600 transition duration-300 shadow-lg">
+          <button className="w-full bg-lime-500 text-black py-3 rounded-lg mt-6 font-bold text-lg hover:bg-lime-600 transition duration-300 shadow-lg">
             Swap
           </button>
         </div>
