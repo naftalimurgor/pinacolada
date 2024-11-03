@@ -53,32 +53,47 @@ const PoolDetail: React.FC<PoolDetailProps> = ({ pool, onBack }) => {
             <button onClick={onBack} className="text-blue-600 hover:underline mb-4">← Back</button>
 
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-                
-                <div className="lg:col-span-1 p-6 bg-white rounded-lg shadow-md">
-                    <div className="flex items-center mb-6">
-                        <div className="flex -space-x-2 mr-4">
-                            {pool.imageUrls.slice(0, 2).map((url, index) => (
-                                <Image
-                                    key={index}
-                                    src={url}
-                                    alt="Token logo"
-                                    width={48}
-                                    height={48}
-                                    className="rounded-full border-2 border-white"
-                                />
-                            ))}
+
+                <div className="lg:col-span-1 ">
+                    <div className="p-6 bg-white rounded-lg border border-gray-200">
+                        <div className="flex items-center mb-6">
+                            <div className="flex -space-x-2 mr-4">
+                                {pool.imageUrls.slice(0, 2).map((url, index) => (
+                                    <Image
+                                        key={index}
+                                        src={url}
+                                        alt="Token logo"
+                                        width={48}
+                                        height={48}
+                                        className="rounded-full border-2 border-white"
+                                    />
+                                ))}
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-bold">{pool.name}</h2>
+                                <p className="text-sm text-gray-500">{pool.apr} APR</p>
+                            </div>
                         </div>
-                        <div>
-                            <h2 className="text-2xl font-bold">{pool.name}</h2>
-                            <p className="text-sm text-gray-500">{pool.apr} APR</p>
+
+                        <div className="grid grid-cols-3 divide-x divide-gray-200 mb-6 text-gray-500 border border-gray-100 rounded-lg p-4">
+                            <div className="text-center">
+                                <p className="text-xs font-semibold text-gray-400">Fees</p>
+                                <p className="text-lg font-medium text-gray-800">{pool.fees}</p>
+                            </div>
+                            <div className="text-center">
+                                <p className="text-xs font-semibold text-gray-400">Liquidity</p>
+                                <p className="text-lg font-medium text-gray-800">{pool.liquidity}</p>
+                            </div>
+                            <div className="text-center">
+                                <p className="text-xs font-semibold text-gray-400">24 Volume</p>
+                                <p className="text-lg font-medium text-gray-800">{pool.volume}</p>
+                            </div>
                         </div>
                     </div>
 
-                    <p className="text-gray-500 mb-2">Fees: {pool.fees}</p>
-                    <p className="text-gray-500 mb-2">Liquidity: {pool.liquidity}</p>
-                    <p className="text-gray-500 mb-6">24h Volume: {pool.volume}</p>
 
-                    <button className="bg-lime-500 text-white px-4 py-2 rounded-lg font-semibold">
+
+                    <button className="bg-lime-500 mt-2 text-white px-4 py-2 rounded-lg font-semibold w-[100%]">
                         Add Liquidity
                     </button>
                 </div>
