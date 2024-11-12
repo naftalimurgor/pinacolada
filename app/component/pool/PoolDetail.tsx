@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PoolInfo from "./PoolInfo";
 import LiquidityChart from "./LiquidityChart";
 import AddLiquidityModal from "./AddLiquidityModal";
+import PoolDetailAdvanced from "./PoolDetailAdvanced";
 
 interface PoolDetailProps {
     pool: {
@@ -17,7 +18,16 @@ interface PoolDetailProps {
 
 const PoolDetail: React.FC<PoolDetailProps> = ({ pool, onBack }) => {
     const [isModalOpen, setModalOpen] = useState(false);
+    const [showAdvanced, setShowAdvanced] = useState(false);
 
+    const handleAddLiquidity = () => {
+        setShowAdvanced(true);
+        setModalOpen(false);
+    };
+
+    if (showAdvanced) {
+        return <PoolDetailAdvanced pool={pool} onBack={onBack} />;
+    }
     return (
         <div className="p-6">
             <button onClick={onBack} className="flex items-center px-4 py-2 text-black font-semibold bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200">
@@ -31,7 +41,7 @@ const PoolDetail: React.FC<PoolDetailProps> = ({ pool, onBack }) => {
                     <LiquidityChart />
                 </div>
             </div>
-            <AddLiquidityModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+            <AddLiquidityModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} onAddLiquidity={handleAddLiquidity} />
         </div>
     );
 };
