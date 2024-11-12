@@ -1,19 +1,19 @@
 import React from 'react';
-
 import TokenSelector from '../TokenSelector';
 import { InfoIcon, XIcon } from '@/component/Icons';
 
 interface AddLiquidityModalProps {
     isOpen: boolean;
     onClose: () => void;
+    onAddLiquidity: () => void; 
 }
 
-const AddLiquidityModal: React.FC<AddLiquidityModalProps> = ({ isOpen, onClose }) => {
+const AddLiquidityModal: React.FC<AddLiquidityModalProps> = ({ isOpen, onClose, onAddLiquidity }) => {
     if (!isOpen) return null;
 
     return (
         <div className="fixed inset-0 z-50 flex justify-end p-3">
-            <div className="relative z-10 w-1/3 bg-white h-full rounded-2xl shadow-lg p-6" >
+            <div className="relative z-10 w-1/3 bg-white h-full rounded-2xl shadow-lg p-6">
                 <button onClick={onClose} className="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
                     <XIcon />
                 </button>
@@ -30,15 +30,12 @@ const AddLiquidityModal: React.FC<AddLiquidityModalProps> = ({ isOpen, onClose }
                 </div>
 
                 <div className="rounded-lg p-3 flex justify-between items-center bg-white">
-                    {/* Token Selector and Available Balance (Left side) */}
                     <div className="flex flex-col items-start">
                         <TokenSelector token="ARCH" onTokenChange={(newToken) => console.log("Token changed to:", newToken)} />
                         <span className="text-xs text-gray-400 mt-1">
                             Available: 144,950.00
                         </span>
                     </div>
-
-                    {/* Input and Half/Max Buttons (Right side) */}
                     <div className="w-3/4 flex flex-col items-end">
                         <input
                             type="text"
@@ -94,12 +91,16 @@ const AddLiquidityModal: React.FC<AddLiquidityModalProps> = ({ isOpen, onClose }
                         <span className="text-black font-bold">0.00 ARCH-AXV-LP</span>
                     </div>
                 </div>
+                
                 <div className="flex justify-end space-x-4 mt-auto mb-4 mr-4 mt-20">
                     <button onClick={onClose} className="text-gray-600 font-semibold">Cancel</button>
-                    <button className="px-4 py-2 font-semibold text-black bg-[#ADFF00] rounded-lg">Add Liquidity</button>
+                    <button
+                        onClick={onAddLiquidity} 
+                        className="px-4 py-4 font-semibold text-black bg-[#ADFF00] rounded-lg"
+                    >
+                        Add Liquidity
+                    </button>
                 </div>
-
-
             </div>
         </div>
     );
