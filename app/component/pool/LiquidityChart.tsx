@@ -1,74 +1,83 @@
-import React from 'react';
-import { Line } from 'react-chartjs-2';
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-} from 'chart.js';
-
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+import React, { useState } from 'react';
+import ChartButtons from './ChartButtons';
+import LiquidityChartComponent from './LiquidityChartComponent';
 
 const LiquidityChart: React.FC = () => {
-    const data = {
-        labels: ["28/07/2023", "29/07/2023", "30/07/2023", "31/07/2023", "01/08/2023", "02/08/2023"],
-        datasets: [
-            {
-                label: "Liquidity",
-                data: [120, 150, 200, 180, 220, 160],
-                fill: false,
-                borderColor: "#000000",
-                tension: 0.1,
-            },
-        ],
+    const data7Days = [
+        { date: "28/07/2023", liquidity: 120 },
+        { date: "29/07/2023", liquidity: 150 },
+        { date: "30/07/2023", liquidity: 200 },
+        { date: "31/07/2023", liquidity: 180 },
+        { date: "01/08/2023", liquidity: 220 },
+        { date: "02/08/2023", liquidity: 160 },
+    ];
+
+    const data30Days = [
+        { date: "01/07/2023", liquidity: 100 },
+        { date: "02/07/2023", liquidity: 130 },
+        { date: "03/07/2023", liquidity: 180 },
+        { date: "04/07/2023", liquidity: 160 },
+        { date: "05/07/2023", liquidity: 210 },
+        { date: "06/07/2023", liquidity: 190 },
+        { date: "07/07/2023", liquidity: 170 },
+        { date: "08/07/2023", liquidity: 220 },
+        { date: "09/07/2023", liquidity: 180 },
+        { date: "10/07/2023", liquidity: 200 },
+        { date: "11/07/2023", liquidity: 210 },
+        { date: "12/07/2023", liquidity: 240 },
+        { date: "13/07/2023", liquidity: 220 },
+        { date: "14/07/2023", liquidity: 230 },
+        { date: "15/07/2023", liquidity: 240 },
+        { date: "16/07/2023", liquidity: 250 },
+        { date: "17/07/2023", liquidity: 230 },
+        { date: "18/07/2023", liquidity: 200 },
+        { date: "19/07/2023", liquidity: 210 },
+        { date: "20/07/2023", liquidity: 220 },
+        { date: "21/07/2023", liquidity: 230 },
+        { date: "22/07/2023", liquidity: 240 },
+        { date: "23/07/2023", liquidity: 250 },
+        { date: "24/07/2023", liquidity: 220 },
+        { date: "25/07/2023", liquidity: 210 },
+        { date: "26/07/2023", liquidity: 230 },
+        { date: "27/07/2023", liquidity: 240 },
+        { date: "28/07/2023", liquidity: 230 },
+    ];
+
+    const data90Days = [
+        { date: "01/05/2023", liquidity: 100 },
+        { date: "02/05/2023", liquidity: 120 },
+        { date: "03/05/2023", liquidity: 130 },
+        { date: "04/05/2023", liquidity: 140 },
+        { date: "05/05/2023", liquidity: 150 },
+        { date: "06/05/2023", liquidity: 160 },
+        { date: "30/07/2023", liquidity: 220 },
+        { date: "01/08/2023", liquidity: 200 },
+        { date: "02/08/2023", liquidity: 180 },
+    ];
+
+    const [selectedTime, setSelectedTime] = useState('7 Days');
+    const [chartData, setChartData] = useState(data7Days);
+
+    const handleSelectChange = (value: string) => {
+        setSelectedTime(value);
+
+        if (value === '7 Days') {
+            setChartData(data7Days);
+        } else if (value === '30 Days') {
+            setChartData(data30Days);
+        } else if (value === '90 Days') {
+            setChartData(data90Days);
+        }
     };
 
     return (
-        <div className="p-6 bg-white rounded-xl border border-gray-200 shadow-lg">
-            <div className="flex justify-between items-center mb-4">
-                <div className="flex space-x-4">
-                    <button className="flex items-center px-6 py-3 text-black font-semibold bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200">Volume</button>
-                    <button className="text-gray-500 font-semibold">Liquidity</button>
-                </div>
-                <select className="text-gray-500 border rounded-lg p-2">
-                    <option>7 Days</option>
-                    <option>30 Days</option>
-                    <option>90 Days</option>
-                </select>
-            </div>
-            <div className="overflow-hidden rounded-lg">
-                <Line data={data} options={{
-                    responsive: true,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                            titleFont: { size: 12 },
-                            bodyFont: { size: 14 },
-                            padding: 10,
-                            displayColors: false,
-                        },
-                    },
-                    scales: {
-                        x: { grid: { display: false }, ticks: { font: { size: 12 } } },
-                        y: { grid: { color: "#E5E7EB" }, ticks: { font: { size: 12 } } }
-                    },
-                    elements: {
-                        point: {
-                            radius: 5,
-                            hoverRadius: 7,
-                            hoverBackgroundColor: '#4F46E5',
-                            borderWidth: 2,
-                            hitRadius: 10,
-                            pointStyle: 'circle',
-                        }
-                    },
-                }} />
-            </div>
+        <div>
+            <ChartButtons selectedTime={selectedTime} onTimeChange={handleSelectChange} />
+             <div className="p-6 bg-white rounded-xl border border-gray-200 shadow-lg">
+             
+             <LiquidityChartComponent chartData={chartData} />
+             </div>
+          
         </div>
     );
 };
