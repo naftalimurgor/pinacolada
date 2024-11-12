@@ -1,6 +1,7 @@
 import React from 'react';
-import XIcon from '../Icons/XIcon';
+
 import TokenSelector from '../TokenSelector';
+import { InfoIcon, XIcon } from '@/component/Icons';
 
 interface AddLiquidityModalProps {
     isOpen: boolean;
@@ -31,18 +32,18 @@ const AddLiquidityModal: React.FC<AddLiquidityModalProps> = ({ isOpen, onClose }
                 <div className="rounded-lg p-3 flex justify-between items-center bg-white">
                     {/* Token Selector and Available Balance (Left side) */}
                     <div className="flex flex-col items-start">
-                        <TokenSelector token="ARCH" onTokenChange={(newToken) => console.log("Token changed to:", newToken)}  />
+                        <TokenSelector token="ARCH" onTokenChange={(newToken) => console.log("Token changed to:", newToken)} />
                         <span className="text-xs text-gray-400 mt-1">
                             Available: 144,950.00
                         </span>
                     </div>
 
                     {/* Input and Half/Max Buttons (Right side) */}
-                    <div className="w-1/2 flex flex-col items-end">
+                    <div className="w-3/4 flex flex-col items-end">
                         <input
                             type="text"
                             placeholder="0"
-                            className="w-full bg-transparent text-lg font-medium text-gray-800 text-right border border-gray-200 rounded-lg p-2 h-15 placeholder-gray-400 focus:outline-none"
+                            className="w-full bg-transparent text-2xl focus:outline-none text-right border border-gray-300 rounded-lg p-2 h-15 placeholder-black"
                         />
                         <div className="flex space-x-4 mt-1">
                             <button className="text-xs text-gray-400 hover:text-gray-600 focus:outline-none">Half</button>
@@ -58,44 +59,47 @@ const AddLiquidityModal: React.FC<AddLiquidityModalProps> = ({ isOpen, onClose }
                             Available: 144,950.00
                         </span>
                     </div>
-                    <div className="w-1/2 flex flex-col items-end">
+                    <div className="w-3/4 flex flex-col items-end">
                         <input
                             type="text"
                             placeholder="0"
                             className="w-full bg-transparent text-2xl focus:outline-none text-right border border-gray-300 rounded-lg p-2 h-15 placeholder-black"
                         />
-                        <div className="flex space-x-2 mt-2">
+                        <div className="flex gap-0 mt-2">
                             <button className="text-sm text-gray-600 hover:underline">Half</button>
                             <button className="text-sm text-gray-600 hover:underline">Max</button>
                         </div>
                     </div>
                 </div>
-                <div className="space-y-4 mt-4">
-                    <div className="flex justify-between text-sm text-gray-700">
+
+                <div className="rounded-2xl border border-gray-200 space-y-6 m-4 pb-6">
+                    <div className="flex justify-between text-sm text-gray-700 border-b border-gray-200 pb-2 px-4 mt-4">
                         <span>Pool Ratio</span>
-                        <span>1:1</span>
+                        <span className="text-black font-bold">1.4888</span>
                     </div>
-                    <div className="flex justify-between text-sm text-gray-700">
+                    <div className="flex justify-between text-sm text-gray-700 border-b border-gray-200 pb-2 px-4 mt-4">
                         <span>My Liquidity</span>
-                        <span>$1,000</span>
+                        <span className="text-black font-bold">0</span>
                     </div>
-                    <div className="flex justify-between text-sm text-gray-700">
-                        <span>Combined APR</span>
-                        <span>18%</span>
+                    <div className="flex justify-between text-sm text-gray-700 border-b border-gray-200 pb-2 px-4 mt-4">
+                        <span>My Share of Pool</span>
+                        <span className="text-black font-bold">0%</span>
                     </div>
-                    <div className="flex justify-between text-sm text-gray-700">
+                    <div className="flex justify-between text-sm text-gray-700 border-b border-gray-200 pb-2 px-4 mt-4">
                         <span>Combined APR</span>
-                        <span>18%</span>
+                        <span className="text-black flex items-center font-bold">18% <InfoIcon className="ml-1 text-black font-bold" /></span>
                     </div>
-                    <div className="flex justify-between text-sm text-gray-700">
-                        <span>Combined APR</span>
-                        <span>18%</span>
+                    <div className="flex justify-between text-sm text-gray-700 px-4">
+                        <span>Staked LP Tokens</span>
+                        <span className="text-black font-bold">0.00 ARCH-AXV-LP</span>
                     </div>
                 </div>
-                <div className="flex justify-between mt-6">
+                <div className="flex justify-end space-x-4 mt-auto mb-4 mr-4 mt-20">
                     <button onClick={onClose} className="text-gray-600 font-semibold">Cancel</button>
-                    <button className="px-4 py-2 font-semibold text-black font-semibold bg-[#ADFF00] rounded-lg">Add Liquidity</button>
+                    <button className="px-4 py-2 font-semibold text-black bg-[#ADFF00] rounded-lg">Add Liquidity</button>
                 </div>
+
+
             </div>
         </div>
     );
