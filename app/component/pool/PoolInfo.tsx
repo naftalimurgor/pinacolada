@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { InfoIcon} from '@/component/Icons';
+import { InfoIcon } from '@/component/Icons';
 
 interface PoolInfoProps {
     pool: {
