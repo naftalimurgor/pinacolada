@@ -17,7 +17,7 @@ interface PoolDetailProps {
     onBack: () => void;
 }
 
-const PoolDetailAdvanced: React.FC<PoolDetailProps> = ({ pool, onBack }) => {
+const PoolDetailAdvanced: React.FC<PoolDetailProps> = ({  onBack }) => {
     const [isModalOpen, setModalOpen] = useState(false);
 
     const handleAddLiquidity = () => {
