@@ -1,9 +1,9 @@
 "use client";
 
 import React from 'react';
-import UnionIcon from '../component/Icons/Union';
-import MenuBarIcon from '../component/Icons/MenuBar';
-import SpeakerIcon from '../component/Icons/Speaker';
+import UnionIcon from './Icons/Union';
+import MenuBarIcon from './Icons/MenuBar';
+import SpeakerIcon from './Icons/Speaker';
 
 interface NavigationBarProps {
     onMenuClick: (e: React.MouseEvent) => void;
