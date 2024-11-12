@@ -1,12 +1,11 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
 
-import {  HeaderSmall,HeaderPool } from '@/component/Header';
+import { HeaderSmall, HeaderPool } from '@/component/Header';
 
 import FilterSidebar from "@/component/filtersidebar/FilterSideBar";
 import PoolTabsInterface from "./PoolTabsInterface";
 import PoolDetail from "@/component/pool/PoolDetail";
+import PoolDetailAdvanced from "@/component/pool/PoolDetailAdvanced";
 
 interface Pool {
   name: string;
@@ -20,6 +19,7 @@ interface Pool {
 const PoolInterface: React.FC = () => {
   const [showSmallHeader, setShowSmallHeader] = useState(false);
   const [selectedPool, setSelectedPool] = useState<Pool | null>(null);
+  const [showAdvanced, setShowAdvanced] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setShowSmallHeader(window.scrollY > 100);
@@ -29,6 +29,11 @@ const PoolInterface: React.FC = () => {
 
   const handleBackClick = () => {
     setSelectedPool(null);
+    setShowAdvanced(false); 
+  };
+
+  const handleAddLiquidityClick = () => {
+    setShowAdvanced(true); 
   };
 
   return (
@@ -51,7 +56,11 @@ const PoolInterface: React.FC = () => {
           </>
         ) : (
           <div className="w-full p-4">
-            <PoolDetail pool={selectedPool} onBack={handleBackClick} />
+            {showAdvanced ? (
+              <PoolDetailAdvanced pool={selectedPool} onBack={handleBackClick} />
+            ) : (
+              <PoolDetail pool={selectedPool} onBack={handleBackClick} onAddLiquidity={handleAddLiquidityClick} />
+            )}
           </div>
         )}
       </div>

@@ -14,6 +14,7 @@ interface PoolDetailProps {
         imageUrls: string[];
     };
     onBack: () => void;
+    onAddLiquidity: () => void; 
 }
 
 const PoolDetail: React.FC<PoolDetailProps> = ({ pool, onBack }) => {
