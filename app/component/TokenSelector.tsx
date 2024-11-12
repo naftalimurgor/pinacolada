@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import { FaChevronDown, FaSearch } from 'react-icons/fa';
 
@@ -13,22 +13,27 @@ interface TokenSelectorProps {
     onTokenChange: (newToken: string) => void;
 }
 
-const TokenSelector: React.FC<TokenSelectorProps> = ({  onTokenChange }) => {
+const TokenSelector: React.FC<TokenSelectorProps> = ({ token, onTokenChange }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedToken, setSelectedToken] = useState<Token | null>(null);
 
-    const tokens: Token[] = [
+    const tokens: Token[] = useMemo(() => [
         { name: 'ARCH', imageUrl: '/archipelago.png', balance: '144,950.00' },
         { name: 'ATOM', imageUrl: '/cosmos.png', balance: '2.00' },
         { name: 'Bitcoin', imageUrl: '/cosmos.png', balance: '0.50' },
         { name: 'Ethereum', imageUrl: '/cosmos.png', balance: '5.25' },
         { name: 'Cardano', imageUrl: '/cosmos.png', balance: '10.00' },
-    ];
+    ], []);
 
     const filteredTokens = tokens.filter((t) =>
         t.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
+
+    useEffect(() => {
+        const defaultToken = tokens.find((t) => t.name === token);
+        if (defaultToken) setSelectedToken(defaultToken);
+    }, [token, tokens]);
 
     const handleTokenClick = (token: Token) => {
         setSelectedToken(token);
@@ -40,7 +45,10 @@ const TokenSelector: React.FC<TokenSelectorProps> = ({  onTokenChange }) => {
     return (
         <div className="relative w-full max-w-xs">
             <div
-                className="flex items-center justify-between space-x-2 rounded-lg px-4 py-2 bg-white border border-gray-300 cursor-pointer"
+                role="button"
+                aria-expanded={isOpen}
+                aria-haspopup="listbox"
+                className="flex items-center justify-between w-[130px] h-[48px] rounded-lg px-4 py-2 bg-white border border-gray-300 cursor-pointer"
                 onClick={() => setIsOpen(!isOpen)}
             >
                 {selectedToken ? (
