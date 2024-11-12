@@ -50,7 +50,7 @@ const TokenSelector: React.FC<TokenSelectorProps> = ({ token, onTokenChange }) =
                 role="button"
                 aria-expanded={isOpen}
                 aria-haspopup="listbox"
-                className="flex items-center justify-between w-full h-[53px] rounded-lg px-4 py-2 bg-white border border-gray-300 cursor-pointer"
+                className="flex items-center justify-between w-full h-[59px] rounded-lg px-4 py-2 bg-white border border-gray-300 cursor-pointer"
                 onClick={() => setIsOpen(!isOpen)}
             >
                 {selectedToken ? (

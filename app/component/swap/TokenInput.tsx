@@ -20,7 +20,7 @@ const TokenInput: React.FC<TokenInputProps> = ({ token, availableAmount, onToken
                 <input
                     type="text"
                     placeholder="0"
-                    className="w-full bg-transparent text-2xl focus:outline-none text-right border border-gray-300 rounded-lg p-2 h-12 placeholder-black"
+                    className="w-full bg-transparent text-2xl focus:outline-none text-right border border-gray-300 rounded-lg p-2 h-14 placeholder-black"
                 />
                 <div className="flex space-x-2 mt-2">
                     <button className="text-sm text-gray-600 hover:underline">Half</button>
