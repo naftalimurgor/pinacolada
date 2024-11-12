@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from "react";
 import PoolInfo from "./PoolInfo";
 import LiquidityChart from "./LiquidityChart";
