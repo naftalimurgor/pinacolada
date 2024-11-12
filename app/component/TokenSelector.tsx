@@ -50,11 +50,11 @@ const TokenSelector: React.FC<TokenSelectorProps> = ({ token, onTokenChange }) =
                 role="button"
                 aria-expanded={isOpen}
                 aria-haspopup="listbox"
-                className="flex items-center justify-between w-[130px] h-[48px] rounded-lg px-4 py-2 bg-white border border-gray-300 cursor-pointer"
+                className="flex items-center justify-between w-full h-[53px] rounded-lg px-4 py-2 bg-white border border-gray-300 cursor-pointer"
                 onClick={() => setIsOpen(!isOpen)}
             >
                 {selectedToken ? (
-                    <Image src={selectedToken.imageUrl} alt={selectedToken.name} width={22} height={22} className="rounded-full" />
+                    <Image src={selectedToken.imageUrl} alt={selectedToken.name} width={20} height={20} className="rounded-full" />
                 ) : (
                     <div className="w-6 h-6 bg-gray-200 rounded-full"></div>
                 )}

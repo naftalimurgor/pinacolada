@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 
 import { HeaderContent } from '@/component/Header';
-import { SlippageModal, SwapButton, TokenInput } from '@/component/swap';
+import { SlippageModal, SwapButton, TokenInput, TokenInputBottom } from '@/component/swap';
 import { SliderIcon, SwapUpDownIcon } from '@/component/Icons';
 
 
@@ -63,7 +63,7 @@ const SwapInterface = () => {
                 <SwapUpDownIcon />
               </button>
             </div>
-            <TokenInput token="ARCH" availableAmount="0.00" onTokenChange={(newToken) => console.log("Token changed to:", newToken)} />
+            <TokenInputBottom token="ARCH" availableAmount="0.00" onTokenChange={(newToken) => console.log("Token changed to:", newToken)} />
           </div>
         </div>
         <SwapButton />
