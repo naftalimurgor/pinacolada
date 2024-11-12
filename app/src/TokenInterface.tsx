@@ -34,6 +34,7 @@ const TokenInterface: React.FC = () => {
       percentage: '10%',
       tvl: '$18,901.00',
       volume: '$18,901.00',
+      imageUrl: '/archipelago.png',
     },
     {
       asset: 'AXV',
@@ -42,6 +43,7 @@ const TokenInterface: React.FC = () => {
       percentage: '10%',
       tvl: '$18,901.00',
       volume: '$18,901.00',
+      imageUrl: '/cosmos.png',
     },
     {
       asset: 'ATOM',
@@ -50,6 +52,7 @@ const TokenInterface: React.FC = () => {
       percentage: '10%',
       tvl: '$18,901.00',
       volume: '$18,901.00',
+      imageUrl: '/archipelago.png',
     },
   ];
 

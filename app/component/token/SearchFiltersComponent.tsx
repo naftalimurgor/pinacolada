@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaSearch } from 'react-icons/fa'
 
 interface SearchFiltersProps {
   searchQuery: string;
@@ -14,8 +15,12 @@ const SearchFiltersComponent: React.FC<SearchFiltersProps> = ({ searchQuery, set
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="🔍 Search for name or ticker"
-            className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            placeholder="Search for name or ticker"
+            className="w-full p-3 pl-10 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          />
+          <FaSearch
+            className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+            size={20}
           />
         </div>
       </div>

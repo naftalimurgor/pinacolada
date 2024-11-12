@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from "next/image";
 
 interface Token {
   asset: string;
@@ -7,6 +8,7 @@ interface Token {
   percentage: string;
   tvl: string;
   volume: string;
+  imageUrl: string; 
 }
 
 interface TokenTableProps {
@@ -29,6 +31,15 @@ const TokenTableComponent: React.FC<TokenTableProps> = ({ tokens }) => {
         {tokens.map((token, index) => (
           <tr key={index} className="border-b border-gray-200 hover:bg-gray-50">
             <td className="py-3 px-6 text-left flex items-center space-x-2">
+              {token.imageUrl && (
+                <Image
+                  src={token.imageUrl}
+                  alt={token.asset}
+                  width={32} 
+                  height={32}
+                  className="w-6 h-6 rounded-full"
+                />
+              )}
               <span>
                 <div>{token.asset}</div>
                 <div className="text-gray-400 text-xs">
