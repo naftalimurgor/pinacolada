@@ -1,6 +1,6 @@
 import React from 'react';
-import XIcon from './Icons/XIcon';
-import TokenSelector from './TokenSelector';
+import XIcon from '../Icons/XIcon';
+import TokenSelector from '../TokenSelector';
 
 interface AddLiquidityModalProps {
     isOpen: boolean;

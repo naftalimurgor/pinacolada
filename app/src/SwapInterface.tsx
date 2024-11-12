@@ -1,11 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import HeaderContent from './component/HeaderContent';
-import SwapUpDownIcon from './component/Icons/SwapUpDown';
-import XIcon from './component/Icons/XIcon';
-import SliderIcon from './component/Icons/Slider';
-import TokenSelector from './component/TokenSelector';
+
+import { HeaderContent } from '@/component/Header';
+import TokenSelector from '@/component/TokenSelector';
+import { SliderIcon, XIcon, SwapUpDownIcon } from '@/component/Icons';
 
 const SwapInterface = () => {
   const [slippageOpen, setSlippageOpen] = useState(false);
@@ -135,7 +134,7 @@ const SwapInterface = () => {
                 <input
                   type="text"
                   placeholder="0"
-                  className="w-full bg-transparent text-2xl focus:outline-none text-right border border-gray-300 rounded-lg p-2 h-10 placeholder-black"
+                  className="w-full bg-transparent text-2xl focus:outline-none text-right  rounded-lg p-2 h-10 placeholder-black"
                 />
               </div>
             </div>

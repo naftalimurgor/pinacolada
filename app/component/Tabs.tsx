@@ -3,9 +3,8 @@
 import React from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import WaterDropIcon from './Icons/WaterDrop';
-import SwapLeftRightIcon from './Icons/SwapLeftRight';
-import CircleIcon from './Icons/Circle';
+
+import { CircleIcon,SwapLeftRightIcon , WaterDropIcon} from '@/component/Icons';
 
 function Tabs() {
     const pathname = usePathname();

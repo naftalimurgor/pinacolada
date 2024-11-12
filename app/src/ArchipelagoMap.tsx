@@ -1,12 +1,6 @@
 import React from 'react';
-import IslandOne from './component/Icons/Archipelago/islandOne';
-import IslandTwo from './component/Icons/Archipelago/islandTwo';
-import IslandThree from './component/Icons/Archipelago/islandThree';
-import IslandFour from './component/Icons/Archipelago/islandFour';
-import IslandFive from './component/Icons/Archipelago/islandFive';
-import IslandSix from './component/Icons/Archipelago/islandSix';
-import IslandSeven from './component/Icons/Archipelago/islandSeven';
-import IslandEight from './component/Icons/Archipelago/islandEight';
+import { IslandOne, IslandTwo, IslandThree, IslandFour, IslandFive, IslandSix, IslandSeven, IslandEight } from '@/component/Icons/Archipelago';
+
 
 interface ArchipelagoMapProps {
     onIslandHover: (islandName: string) => void;

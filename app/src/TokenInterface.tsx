@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import HeaderContent from "./component/HeaderContent";
-import HeaderSmall from "./component/HeaderSmall";
+import { HeaderContent, HeaderSmall } from '@/component/Header';
 
 const TokenInterface: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");

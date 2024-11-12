@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import MenuBarxIcon from './component/Icons/MenuBarX';
+import {  } from '@/component/Icons';
+import { MenuBarxIcon } from '@/component/Icons';
+
 import ArchipelagoMap from './ArchipelagoMap';
 
 interface PinaColadaInfoOverlayProps {

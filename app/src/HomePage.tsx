@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import PinaColadaInfoOverlay from './PinaColadaInfoOverlay';
-import NavigationBar from './component/NavigationBar';
-import { useRouter } from 'next/navigation'; 
+import NavigationBar from '@/component/NavigationBar';
+import { useRouter } from 'next/navigation';
 
 const HomePage: React.FC = () => {
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
@@ -16,7 +16,7 @@ const HomePage: React.FC = () => {
   };
 
   const handleButtonClick = () => {
-    router.push('/token'); 
+    router.push('/token');
   };
 
   return (

@@ -1,6 +1,7 @@
 import React from 'react';
-import Tabs from './Tabs'; 
-import UnionIcon from './Icons/Union'; 
+import Tabs from '../Tabs'; 
+import UnionIcon from '../Icons/Union'; 
+
 
 const HeaderContent: React.FC = () => {
     return (

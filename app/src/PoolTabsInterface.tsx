@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import PoolList from "./component/PoolList";
+import PoolList from "../component/pool/PoolList";
 
 interface Pool {
   name: string;

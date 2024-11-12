@@ -1,5 +1,5 @@
 import React from 'react';
-import './FilterSidebar.css'; // Import the custom CSS
+import './FilterSidebar.css';
 
 const FilterSidebar: React.FC = () => {
   return (

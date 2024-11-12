@@ -1,5 +1,5 @@
 
-import PoolInterface from "../src/PoolInterface";
+import PoolInterface from "@/src/PoolInterface";
 
 const PoolPage: React.FC = () => {
   return (

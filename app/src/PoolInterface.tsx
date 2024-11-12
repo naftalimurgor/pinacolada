@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import HeaderSmall from "./component/HeaderSmall";
-import HeaderPool from "./component/HeaderPool";
-import FilterSidebar from "./component/FilterSideBar";
+import HeaderSmall from "../component/Header/HeaderSmall";
+import HeaderPool from "../component/Header/HeaderPool";
+import FilterSidebar from "../component/filtersidebar/FilterSideBar";
 import PoolTabsInterface from "./PoolTabsInterface";
-import PoolDetail from "./component/PoolDetail";
+import PoolDetail from "../component/pool/PoolDetail";
 
 interface Pool {
   name: string;
