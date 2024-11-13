@@ -59,7 +59,7 @@ const SwapInterface = () => {
           onCustomSlippageChange={setCustomSlippage}
           onSlippageSelect={handleSlippageSelect}
         />
-        
+
         <div className={`bg-white rounded-2xl shadow-xl p-8 w-[480px] ${slippageOpen ? 'mt-6' : ''}`}>
           <div className="space-y-6">
             <TokenInput token="ATOM" availableAmount="144,950.00" onTokenChange={(newToken) => console.log("Token changed to:", newToken)} />
@@ -72,13 +72,15 @@ const SwapInterface = () => {
             <TokenInputBottom token="ARCH" availableAmount="0.00" onTokenChange={(newToken) => console.log("Token changed to:", newToken)} />
           </div>
         </div>
-
         <SwapButton onClick={handleSwapClick} />
 
-        {showNotification && (
-          <SwapNotification status="success" onDismiss={handleNotificationDismiss} />
-        )}
       </div>
+
+      {showNotification && (
+        <div className="absolute bottom-32 right-8">
+          <SwapNotification status="success" onDismiss={handleNotificationDismiss} />
+        </div>
+      )}
     </div>
   );
 };
