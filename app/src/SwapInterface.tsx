@@ -1,19 +1,26 @@
 'use client';
 
 import React, { useState } from 'react';
-
 import { HeaderContent } from '@/component/Header';
-import { SlippageModal, SwapButton, TokenInput, TokenInputBottom } from '@/component/swap';
+import { SlippageModal, SwapButton, TokenInput, TokenInputBottom, SwapNotification } from '@/component/swap';
 import { SliderIcon, SwapUpDownIcon } from '@/component/Icons';
-
 
 const SwapInterface = () => {
   const [slippageOpen, setSlippageOpen] = useState(false);
   const [customSlippage, setCustomSlippage] = useState('');
+  const [showNotification, setShowNotification] = useState(false);
 
   const handleSlippageSelect = (value: string) => {
     setCustomSlippage(value);
     setSlippageOpen(false);
+  };
+
+  const handleSwapClick = () => {
+    setShowNotification(true);
+  };
+
+  const handleNotificationDismiss = () => {
+    setShowNotification(false);
   };
 
   return (
@@ -52,9 +59,8 @@ const SwapInterface = () => {
           onCustomSlippageChange={setCustomSlippage}
           onSlippageSelect={handleSlippageSelect}
         />
-        <div
-          className={`bg-white rounded-2xl shadow-xl p-8 w-[480px] ${slippageOpen ? 'mt-6' : ''}`}
-        >
+
+        <div className={`bg-white rounded-2xl shadow-xl p-8 w-[480px] ${slippageOpen ? 'mt-6' : ''}`}>
           <div className="space-y-6">
             <TokenInput token="ATOM" availableAmount="144,950.00" onTokenChange={(newToken) => console.log("Token changed to:", newToken)} />
             <div className="flex justify-center my-2 relative">
@@ -66,8 +72,15 @@ const SwapInterface = () => {
             <TokenInputBottom token="ARCH" availableAmount="0.00" onTokenChange={(newToken) => console.log("Token changed to:", newToken)} />
           </div>
         </div>
-        <SwapButton />
+        <SwapButton onClick={handleSwapClick} />
+
       </div>
+
+      {showNotification && (
+        <div className="absolute bottom-32 right-8">
+          <SwapNotification status="success" onDismiss={handleNotificationDismiss} />
+        </div>
+      )}
     </div>
   );
 };
