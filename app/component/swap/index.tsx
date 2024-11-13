@@ -1,8 +1,5 @@
-import SlippageModal from './SlippageModal';
-import SwapButton from './SwapButton';
-import SwapNotification from './SwapNotification';
-import TokenInput from './TokenInput';
-import TokenInputBottom from "./TokenInputBottom"
-
-
-export { SlippageModal, SwapButton, SwapNotification, TokenInput, TokenInputBottom };
+export { default as SlippageModal } from './SlippageModal';
+export { default as SwapButton } from './SwapButton';
+export { default as SwapNotification } from './SwapNotification';
+export { default as TokenInput } from './TokenInput';
+export { default as TokenInputBottom } from './TokenInputBottom';

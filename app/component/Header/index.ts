@@ -1,8 +1,4 @@
-import Header from './Header';
-import HeaderContent from './HeaderContent';
-import HeaderPool from './HeaderPool';
-import HeaderSmall from './HeaderSmall';
-
-
-
-export { Header, HeaderContent, HeaderPool, HeaderSmall };
+export { default as Header } from './Header';
+export { default as HeaderContent } from './HeaderContent';
+export { default as HeaderPool } from './HeaderPool';
+export { default as HeaderSmall } from './HeaderSmall';

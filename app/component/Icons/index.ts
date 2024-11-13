@@ -1,14 +1,11 @@
-import CircleIcon from './Circle';
-import InfoIcon from './Info';
-import MenuBarIcon from './MenuBar';
-import MenuBarxIcon from './MenuBarX';
-import SliderIcon from './Slider';
-import SpeakerIcon from './Speaker';
-import SwapLeftRightIcon from './SwapLeftRight';
-import SwapUpDownIcon from './SwapUpDown';
-import UnionIcon from './Union';
-import WaterDropIcon from './WaterDrop';
-import XIcon from './XIcon';
-
-
-export { CircleIcon, InfoIcon, MenuBarIcon, MenuBarxIcon, SliderIcon, SpeakerIcon, SwapUpDownIcon, SwapLeftRightIcon, UnionIcon, WaterDropIcon , XIcon };
+export { default as CircleIcon } from './Circle';
+export { default as InfoIcon } from './Info';
+export { default as MenuBarIcon } from './MenuBar';
+export { default as MenuBarxIcon } from './MenuBarX';
+export { default as SliderIcon } from './Slider';
+export { default as SpeakerIcon } from './Speaker';
+export { default as SwapLeftRightIcon } from './SwapLeftRight';
+export { default as SwapUpDownIcon } from './SwapUpDown';
+export { default as UnionIcon } from './Union';
+export { default as WaterDropIcon } from './WaterDrop';
+export { default as XIcon } from './XIcon';
