@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IslandTwo: React.FC<{ onHover: () => void, onLeave: () => void }> = ({ onHover, onLeave }) => {
+const IslandTwo: React.FC<{ onHover: () => void, onLeave: () => void, hoverd: boolean }> = ({ onHover, onLeave, hoverd }) => {
     return (
         <svg width="134" height="112" viewBox="0 0 134 112" fill="none" xmlns="http://www.w3.org/2000/svg"
             onMouseEnter={onHover}
@@ -25,11 +25,11 @@ const IslandTwo: React.FC<{ onHover: () => void, onLeave: () => void }> = ({ onH
                 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" cx="67" cy="56">
                     <rect x="9.5" y="9.5" width="45" height="45" rx="22.5" stroke="#ADFF00" />
                     <g filter="url(#filter0_d_5408_2531)">
-                        <circle cx="32" cy="32" r="7" fill="#ADFF00" />
+                        <circle cx="32" cy="32" r="7" fill={hoverd ? '#008223' : '#ADFF00'} />
                     </g>
                     <defs>
-                        <filter id="filter0_d_5408_2531" x="0" y="0" width="64" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <filter id="filter0_d_5408_2531" x="0" y="0" width="64" height="64" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                            <feFlood floodOpacity="0" result="BackgroundImageFix" />
                             <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                             <feMorphology radius="6" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_5408_2531" />
                             <feOffset />

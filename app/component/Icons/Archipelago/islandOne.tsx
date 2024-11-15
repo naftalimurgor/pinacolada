@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IslandOne: React.FC<{ onHover: () => void, onLeave: () => void }> = ({ onHover, onLeave }) => {
+const IslandOne: React.FC<{ onHover: () => void, onLeave: () => void, hoverd: boolean }> = ({ onHover, onLeave, hoverd }) => {
     return (
         <svg width="228" height="235" viewBox="0 0 228 235" fill="none" xmlns="http://www.w3.org/2000/svg"
             onMouseEnter={onHover}
@@ -57,7 +57,7 @@ const IslandOne: React.FC<{ onHover: () => void, onLeave: () => void }> = ({ onH
                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1733_8404" result="shape" />
                 </filter>
             </defs>
-            <circle cx="114" cy="117.5" r="7" fill="#008223" fillOpacity="0.4" />
+            <circle cx="114" cy="117.5" r="7" fill="#008223" fillOpacity={hoverd ? 1.0 : 0.4} />
         </svg>
 
 
