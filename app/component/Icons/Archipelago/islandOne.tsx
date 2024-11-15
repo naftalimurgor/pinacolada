@@ -50,7 +50,7 @@ const IslandOne: React.FC<{ onHover: () => void, onLeave: () => void }> = ({ onH
                 <path d="M58.9529 24.3472L57.5206 25.6813L54.3225 26.2111L52.8903 24.7788L51.1833 23.9744L46.4549 23.2681L46.9846 22.189L49.7511 21.3061L52.3409 22.189L52.9687 22.6402L55.7352 22.1105L58.1484 23.0915L58.9529 24.3472Z" stroke="black" strokeOpacity="0.6" strokeWidth="2.60047" mask="url(#path-1-inside-1_1733_8404)" />
             </g>
             <defs>
-                <filter id="filter0_b_1733_8404" x="-23.6138" y="-23.6277" width="275.278" height="282.615" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <filter id="filter0_b_1733_8404" x="-23.6138" y="-23.6277" width="275.278" height="282.615" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                     <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feGaussianBlur in="BackgroundImageFix" stdDeviation="12" />
                     <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1733_8404" />
