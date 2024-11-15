@@ -15,7 +15,7 @@ const IslandFive: React.FC<{ onHover: () => void, onLeave: () => void }> = ({ on
             </g>
             <defs>
                 <filter id="filter0_b_1733_8400" x="-23.3259" y="-24" width="239.923" height="135.603" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feGaussianBlur in="BackgroundImageFix" stdDeviation="12" />
                     <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1733_8400" />
                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1733_8400" result="shape" />

@@ -15,7 +15,7 @@ const IslandEight: React.FC<{ onHover: () => void, onLeave: () => void }> = ({ o
             </g>
             <defs>
                 <filter id="filter0_b_1733_8397" x="-23.1812" y="-23.4368" width="221.737" height="145.296" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feGaussianBlur in="BackgroundImageFix" stdDeviation="12" />
                     <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1733_8397" />
                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1733_8397" result="shape" />
