@@ -21,6 +21,7 @@ const IslandFive: React.FC<{ onHover: () => void, onLeave: () => void }> = ({ on
                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1733_8400" result="shape" />
                 </filter>
             </defs>
+            <circle cx="96.5" cy="44" r="7" fill="#008223" fillOpacity={0.4} />
         </svg>
     );
 };

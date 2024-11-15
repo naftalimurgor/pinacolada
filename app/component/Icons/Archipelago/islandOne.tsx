@@ -57,6 +57,7 @@ const IslandOne: React.FC<{ onHover: () => void, onLeave: () => void }> = ({ onH
                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1733_8404" result="shape" />
                 </filter>
             </defs>
+            <circle cx="114" cy="117.5" r="7" fill="#008223" fillOpacity="0.4" />
         </svg>
 
 

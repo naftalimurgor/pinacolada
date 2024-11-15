@@ -21,6 +21,27 @@ const IslandTwo: React.FC<{ onHover: () => void, onLeave: () => void }> = ({ onH
                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1733_8403" result="shape" />
                 </filter>
             </defs>
+            <g transform='translate(35,24)'>
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" cx="67" cy="56">
+                    <rect x="9.5" y="9.5" width="45" height="45" rx="22.5" stroke="#ADFF00" />
+                    <g filter="url(#filter0_d_5408_2531)">
+                        <circle cx="32" cy="32" r="7" fill="#ADFF00" />
+                    </g>
+                    <defs>
+                        <filter id="filter0_d_5408_2531" x="0" y="0" width="64" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feMorphology radius="6" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_5408_2531" />
+                            <feOffset />
+                            <feGaussianBlur stdDeviation="9.5" />
+                            <feComposite in2="hardAlpha" operator="out" />
+                            <feColorMatrix type="matrix" values="0 0 0 0 0.8 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0" />
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_5408_2531" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_5408_2531" result="shape" />
+                        </filter>
+                    </defs>
+                </svg>
+            </g>
         </svg>
 
 
