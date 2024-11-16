@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { } from '@/component/Icons';
 import { MenuBarxIcon } from '@/component/Icons';
+import React, { useState } from 'react';
 
 import ArchipelagoMap from './ArchipelagoMap';
 
