@@ -37,7 +37,7 @@ const HomePage: React.FC = () => {
         />
       </div>
 
-      <NavigationBar onMenuClick={handleMenuBarClick} />
+      <NavigationBar onMenuClick={handleMenuBarClick} isOverlayOpen={isOverlayOpen} />
 
       <div className="relative z-1 flex flex-col items-center justify-between h-full text-center">
         <div className="flex flex-col items-center justify-center h-full">
