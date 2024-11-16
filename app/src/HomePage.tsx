@@ -5,7 +5,7 @@ import Image from 'next/image';
 import PinaColadaInfoOverlay from './PinaColadaInfoOverlay';
 import NavigationBar from '@/component/NavigationBar';
 import { useRouter } from 'next/navigation';
-import { Permanent_Marker } from '@next/font/google'
+import { Permanent_Marker } from 'next/font/google'
 
 const permanentMarker = Permanent_Marker({
   subsets: ['latin'],
