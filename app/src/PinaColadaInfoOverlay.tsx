@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import {  } from '@/component/Icons';
+import { } from '@/component/Icons';
 import { MenuBarxIcon } from '@/component/Icons';
 
 import ArchipelagoMap from './ArchipelagoMap';
@@ -31,22 +31,24 @@ const PinaColadaInfoOverlay: React.FC<PinaColadaInfoOverlayProps> = ({ isOpen, o
 
             {/* Main Content Container */}
             <div
-                className="bg-white bg-opacity-80 rounded-lg shadow-lg relative p-8"
+                className="bg-white bg-opacity-80 rounded-lg shadow-lg relative p-8 pl-[72px] pr-[72px]"
                 style={{
+                    paddingBottom: '48px',
                     width: '90%',
                     height: '97%',
                     top: '100px',
-                    backgroundImage: 'url(/paper.png)', 
+                    backgroundImage: 'url(/paper.png)',
                     backgroundSize: 'cover',
+                    objectFit: 'contain',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
                     clipPath: 'inset(10px 20px 10px 20px)',
                 }}
             >
-                <div className="grid grid-cols-[1fr_2fr] gap-6">
-                    <div>
+                <div className="grid grid-cols-[1fr_2fr] gap-6" style={{ paddingRight: '43px' }}>
+                    <div style={{ paddingLeft: '72px', paddingTop: '50px' }}>
                         <h2 className="text-3xl font-extrabold mb-4">ABOUT PIÑA COLADA</h2>
-                        <p className="mb-4 text-lg">
+                        <p className="mb-4 text-lg" style={{ maxWidth: 'px' }}>
                             Besides being the signature holiday drink of many, it&apos;s also a Caribbean-themed DEX on Archway, where the experience is as sweet as a good pineapple drink.
                         </p>
 
@@ -89,7 +91,7 @@ const PinaColadaInfoOverlay: React.FC<PinaColadaInfoOverlayProps> = ({ isOpen, o
                     </div>
 
                     <div>
-                        <div style={{ maxWidth: '400px' }}>
+                        <div style={{ maxWidth: '400px', marginTop: '50px', paddingLeft: '62px', borderLeft: '1px solid rgba(0, 0, 0, 0.1)' }}>
                             <h2 className="text-3xl font-extrabold mb-4">THE ARCHIPELAGOS</h2>
                             <p className="mb-4 text-lg" style={{ maxWidth: '300px' }}>
                                 Think of the Archipelagos as an island-hopping experience where you get to taste the best each island has to offer.
@@ -100,17 +102,18 @@ const PinaColadaInfoOverlay: React.FC<PinaColadaInfoOverlayProps> = ({ isOpen, o
                         </div>
                         <div className="relative w-full h-64 mb-4">
                             <ArchipelagoMap
+
                                 onIslandHover={setHoveredIsland}
                                 onIslandLeave={() => setHoveredIsland(null)}
                             />
                             {hoveredIsland && (
-                                <div className="absolute bottom-0 left-0 bg-black bg-opacity-75 text-white p-2 rounded">
+                                <div className="fade-up absolute bottom-0 left-0 bg-black bg-opacity-75 text-white p-2 rounded">
                                     {hoveredIsland} <br /> A Liquid Staking destination coming soon!
                                 </div>
                             )}
                         </div>
 
-                        <div className="absolute bottom-24 right-24 text-left" style={{ maxWidth: '300px' }}>
+                        <div className="absolute bottom-24 right-24 text-left" style={{ maxWidth: '300px', paddingTop: '45px' }}>
                             <p className="mb-2 text-lg">
                                 We&apos;re on a mission to make your DeFi journey feel as enjoyable as a Caribbean vacation.
                             </p>

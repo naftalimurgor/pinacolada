@@ -18,21 +18,20 @@ const ArchipelagoMap: React.FC<ArchipelagoMapProps> = ({ onIslandHover, onIsland
     const [islandEightHover, setIslandEightHover] = useState(false)
 
     return (
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-full" style={{ paddingBottom: '48px', paddingLeft: '43px' }}>
             {/* Each island positioned precisely as per design */}
             <div
                 className="absolute cursor-pointer"
                 style={{
                     top: '90px',
-                    left: '150px'
+                    left: '150px',
                 }}
                 onMouseEnter={() => onIslandHover('Daiquiri Island, A Liquid Staking destination coming soon.')}
                 onMouseLeave={onIslandLeave}
             >
                 <IslandOne
-                    hoverd={islandOneHover}
-                    onHover={() => setIslandOneHover(_hoverd => !_hoverd)}
-                    onLeave={() => setIslandOneHover(false)}
+                    onHover={() => { }}
+                    onLeave={() => { }}
                 />
             </div>
 
@@ -66,9 +65,6 @@ const ArchipelagoMap: React.FC<ArchipelagoMapProps> = ({ onIslandHover, onIsland
                 onMouseLeave={onIslandLeave}
             >
                 <IslandThree
-                    hoverd={islandThreeHover}
-                    onHover={() => setIslandThreeHover(_hoverd => !_hoverd)}
-                    onLeave={() => setIslandThreeHover(false)}
                 />
             </div>
             <div
@@ -83,9 +79,6 @@ const ArchipelagoMap: React.FC<ArchipelagoMapProps> = ({ onIslandHover, onIsland
                 onMouseLeave={onIslandLeave}
             >
                 <IslandFour
-                    hoverd={islandFourHover}
-                    onHover={() => setIslandFourHover(_hoverd => !_hoverd)}
-                    onLeave={() => setIslandFourHover(false)}
                 />
             </div>
 
@@ -101,9 +94,6 @@ const ArchipelagoMap: React.FC<ArchipelagoMapProps> = ({ onIslandHover, onIsland
                 onMouseLeave={onIslandLeave}
             >
                 <IslandFive
-                    hoverd={islandFiveHover}
-                    onHover={() => setIslandFiveHover(_hoverd => !_hoverd)}
-                    onLeave={() => setIslandFiveHover(false)}
                 />
             </div>
 
@@ -119,9 +109,6 @@ const ArchipelagoMap: React.FC<ArchipelagoMapProps> = ({ onIslandHover, onIsland
                 onMouseLeave={onIslandLeave}
             >
                 <IslandSix
-                    hoverd={islandSixHover}
-                    onHover={() => setIslandSixHover(_hoverd => !_hoverd)}
-                    onLeave={() => setIslandSixHover(false)}
                 />
             </div>
 
@@ -137,9 +124,6 @@ const ArchipelagoMap: React.FC<ArchipelagoMapProps> = ({ onIslandHover, onIsland
                 onMouseLeave={onIslandLeave}
             >
                 <IslandSeven
-                    hoverd={islandSevenHover}
-                    onHover={() => setIslandSevenHover(_hoverd => !_hoverd)}
-                    onLeave={() => setIslandSevenHover(false)}
                 />
             </div>
 
@@ -155,9 +139,6 @@ const ArchipelagoMap: React.FC<ArchipelagoMapProps> = ({ onIslandHover, onIsland
                 onMouseLeave={onIslandLeave}
             >
                 <IslandEight
-                    hoverd={islandEightHover}
-                    onHover={() => setIslandEightHover(_hoverd => !_hoverd)}
-                    onLeave={() => setIslandEightHover(false)}
                 />
             </div>
         </div>

@@ -1,10 +1,11 @@
 import React from 'react';
 
-const IslandSeven: React.FC<{ onHover: () => void, onLeave: () => void, hoverd: boolean }> = ({ onHover, onLeave, hoverd }) => {
+const IslandSeven: React.FC = () => {
     return (
-        <svg width="178" height="119" viewBox="0 0 178 119" fill="none" xmlns="http://www.w3.org/2000/svg"
-            onMouseEnter={onHover}
-            onMouseLeave={onLeave}
+        <svg
+            className='hover-ring'
+            width="178" height="119" viewBox="0 0 178 119" fill="none" xmlns="http://www.w3.org/2000/svg"
+
         >
             <g filter="url(#filter0_b_1733_8398)">
                 <mask id="path-1-inside-1_1733_8398" fill="white">
@@ -21,7 +22,15 @@ const IslandSeven: React.FC<{ onHover: () => void, onLeave: () => void, hoverd: 
                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1733_8398" result="shape" />
                 </filter>
             </defs>
-            <circle cx="89" cy="59.5" r="7" fill="#008223" fillOpacity={hoverd ? 1.0 : 0.4} />
+            <g transform='translate(66,36.5)'>
+                <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.3">
+                        <rect x="0.5" y="0.5" width="45" height="45" rx="22.5" stroke="#FF4D00" />
+                        <circle cx="23" cy="23" r="7" fill="#008223" />
+                    </g>
+                </svg>
+            </g>
+
         </svg>
 
     );
