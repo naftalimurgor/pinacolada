@@ -11,7 +11,7 @@ const ArchipelagoMap: React.FC<ArchipelagoMapProps> = ({ onIslandHover, onIsland
     const [islandTwoHover, setIslandTwoHover] = useState(false)
 
     return (
-        <div className="relative w-full h-full" style={{ paddingBottom: '48px', paddingLeft: '43px' }}>
+        <div className="relative w-full h-full" style={{ paddingBottom: '48px', marginLeft: '90px' }}>
             {/* Each island positioned precisely as per design */}
             <div
                 className="absolute cursor-pointer"
