@@ -5,6 +5,13 @@ import Image from 'next/image';
 import PinaColadaInfoOverlay from './PinaColadaInfoOverlay';
 import NavigationBar from '@/component/NavigationBar';
 import { useRouter } from 'next/navigation';
+import { Permanent_Marker } from '@next/font/google'
+
+const permanentMarker = Permanent_Marker({
+  subsets: ['latin'],
+  weight: '400',
+  style: 'normal',
+});
 
 const HomePage: React.FC = () => {
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
@@ -30,16 +37,16 @@ const HomePage: React.FC = () => {
         />
       </div>
 
-      <NavigationBar onMenuClick={handleMenuBarClick} />
+      <NavigationBar onMenuClick={handleMenuBarClick} isOverlayOpen={isOverlayOpen} />
 
       <div className="relative z-1 flex flex-col items-center justify-between h-full text-center">
         <div className="flex flex-col items-center justify-center h-full">
-          <span className="block text-5xl font-extrabold text-[#b8ff4f]">
+          <span className={`${permanentMarker.className} block text-5xl font-extrabold text-[#b8ff4f]`}>
             Welcome to
           </span>
           <div className="relative inline-block text-[7vw] font-extrabold text-white">
             PIÑA COLADA
-            <span className="absolute right-0 -bottom-10 text-[5vw] text-[#b8ff4f]">
+            <span className={`${permanentMarker.className} absolute right-0 -bottom-10 text-[5vw] text-[#b8ff4f]`}>
               ISLAND
             </span>
             <div className="absolute left-0 -bottom-16 text-base text-white text-left">
