@@ -17,7 +17,7 @@ const TokenInputBottom: React.FC<TokenInputProps> = ({ token, onTokenChange }) =
         <input
           type="text"
           placeholder="0"
-          className="w-full bg-transparent text-2xl focus:outline-none text-right  rounded-lg p-2 h-15 placeholder-black"
+          className="w-full bg-transparent text-2xl focus:outline-hidden text-right  rounded-lg p-2 h-15 placeholder-black"
         />
       </div>
     </div>

@@ -23,7 +23,7 @@ const PoolList: React.FC<PoolListProps> = ({ pools, onSelect }) => {
           <div
             key={index}
             onClick={() => onSelect(pool)}
-            className="p-4 border rounded shadow cursor-pointer hover:bg-gray-100 transition duration-200"
+            className="p-4 border rounded-sm shadow-sm cursor-pointer hover:bg-gray-100 transition duration-200"
           >
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center space-x-2">
