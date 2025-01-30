@@ -70,7 +70,7 @@ const TokenSelector: React.FC<TokenSelectorProps> = ({ token, onTokenChange }) =
                             placeholder="Search"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full bg-transparent focus:outline-none text-center"
+                            className="w-full bg-transparent focus:outline-hidden text-center"
                         />
                         <FaSearch className="text-gray-400" />
                     </div>
@@ -80,7 +80,7 @@ const TokenSelector: React.FC<TokenSelectorProps> = ({ token, onTokenChange }) =
                             filteredTokens.map((t, index) => (
                                 <div
                                     key={index}
-                                    className="flex items-center justify-between space-x-2 p-2 hover:bg-gray-100 cursor-pointer rounded-lg shadow-sm"
+                                    className="flex items-center justify-between space-x-2 p-2 hover:bg-gray-100 cursor-pointer rounded-lg shadow-xs"
                                     onClick={() => handleTokenClick(t)}
                                 >
                                     <div className="flex items-center space-x-2">

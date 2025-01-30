@@ -16,7 +16,7 @@ const SearchFiltersComponent: React.FC<SearchFiltersProps> = ({ searchQuery, set
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search for name or ticker"
-            className="w-full p-3 pl-10 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            className="w-full p-3 pl-10 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-hidden"
           />
           <FaSearch
             className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
@@ -27,7 +27,7 @@ const SearchFiltersComponent: React.FC<SearchFiltersProps> = ({ searchQuery, set
 
       <div className="mb-6">
         <label className="block mb-2 font-semibold text-gray-600">Balance</label>
-        <select className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+        <select className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-hidden">
           <option>Any</option>
           <option>High to Low</option>
           <option>Low to High</option>
@@ -40,7 +40,7 @@ const SearchFiltersComponent: React.FC<SearchFiltersProps> = ({ searchQuery, set
           <input
             type="number"
             placeholder="From"
-            className="w-1/2 p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            className="w-1/2 p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-hidden"
             style={{
               appearance: 'textfield',
               WebkitAppearance: 'none',
@@ -50,7 +50,7 @@ const SearchFiltersComponent: React.FC<SearchFiltersProps> = ({ searchQuery, set
           <input
             type="number"
             placeholder="To"
-            className="w-1/2 p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            className="w-1/2 p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-hidden"
             style={{
               appearance: 'textfield',
               WebkitAppearance: 'none',
@@ -66,7 +66,7 @@ const SearchFiltersComponent: React.FC<SearchFiltersProps> = ({ searchQuery, set
           <input
             type="number"
             placeholder="From"
-            className="w-1/2 p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            className="w-1/2 p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-hidden"
             style={{
               appearance: 'textfield',
               WebkitAppearance: 'none',
@@ -76,7 +76,7 @@ const SearchFiltersComponent: React.FC<SearchFiltersProps> = ({ searchQuery, set
           <input
             type="number"
             placeholder="To"
-            className="w-1/2 p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            className="w-1/2 p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-hidden"
             style={{
               appearance: 'textfield',
               WebkitAppearance: 'none',

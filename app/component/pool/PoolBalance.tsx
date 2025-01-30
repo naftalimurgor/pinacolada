@@ -7,7 +7,7 @@ interface PoolBalanceProps {
 }
 
 const PoolBalance: React.FC<PoolBalanceProps> = ({ balance, tokens }) => (
-    <div className="p-6 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-between mb-6">
+    <div className="p-6 bg-white rounded-xl border border-gray-200 shadow-xs flex items-center justify-between mb-6">
         <div>
             <h2 className="text-sm font-semibold text-gray-500 mb-1">Your Pool Balance</h2>
             <p className="text-2xl font-semibold text-gray-900">${balance}</p>

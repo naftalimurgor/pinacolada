@@ -19,7 +19,7 @@ const PinaColadaInfoOverlay: React.FC<PinaColadaInfoOverlayProps> = ({ isOpen, o
         <div className="fixed inset-0 bg-sky-200 bg-opacity-80 z-50 flex items-center justify-center p-4">
             <div
                 onClick={onClose}
-                className="absolute top-8 right-8 p-2 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 z-50 cursor-pointer"
+                className="absolute top-8 right-8 p-2 text-gray-500 hover:text-gray-700 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 z-50 cursor-pointer"
                 style={{
                     top: '10px',
                     right: '50%',
@@ -61,7 +61,7 @@ const PinaColadaInfoOverlay: React.FC<PinaColadaInfoOverlayProps> = ({ isOpen, o
                                         layout="fill"
                                         objectFit="cover"
                                         alt="Piña Colada"
-                                        className="rounded-sm"
+                                        className="rounded-xs"
                                     />
                                 </div>
                             </div>
@@ -81,7 +81,7 @@ const PinaColadaInfoOverlay: React.FC<PinaColadaInfoOverlayProps> = ({ isOpen, o
                                         layout="fill"
                                         objectFit="cover"
                                         alt="Island"
-                                        className="rounded-sm"
+                                        className="rounded-xs"
                                     />
                                 </div>
                             </div>
@@ -104,7 +104,7 @@ const PinaColadaInfoOverlay: React.FC<PinaColadaInfoOverlayProps> = ({ isOpen, o
                                 onIslandLeave={() => setHoveredIsland(null)}
                             />
                             {hoveredIsland && (
-                                <div className="absolute bottom-0 left-0 bg-black bg-opacity-75 text-white p-2 rounded">
+                                <div className="absolute bottom-0 left-0 bg-black bg-opacity-75 text-white p-2 rounded-sm">
                                     {hoveredIsland} <br /> A Liquid Staking destination coming soon!
                                 </div>
                             )}

@@ -40,11 +40,11 @@ const AddLiquidityModal: React.FC<AddLiquidityModalProps> = ({ isOpen, onClose, 
                         <input
                             type="text"
                             placeholder="0"
-                            className="w-full bg-transparent text-2xl focus:outline-none text-right border border-gray-300 rounded-lg p-2 h-15 placeholder-black"
+                            className="w-full bg-transparent text-2xl focus:outline-hidden text-right border border-gray-300 rounded-lg p-2 h-15 placeholder-black"
                         />
                         <div className="flex space-x-4 mt-1">
-                            <button className="text-xs text-gray-400 hover:text-gray-600 focus:outline-none">Half</button>
-                            <button className="text-xs text-gray-400 hover:text-gray-600 focus:outline-none">Max</button>
+                            <button className="text-xs text-gray-400 hover:text-gray-600 focus:outline-hidden">Half</button>
+                            <button className="text-xs text-gray-400 hover:text-gray-600 focus:outline-hidden">Max</button>
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ const AddLiquidityModal: React.FC<AddLiquidityModalProps> = ({ isOpen, onClose, 
                         <input
                             type="text"
                             placeholder="0"
-                            className="w-full bg-transparent text-2xl focus:outline-none text-right border border-gray-300 rounded-lg p-2 h-15 placeholder-black"
+                            className="w-full bg-transparent text-2xl focus:outline-hidden text-right border border-gray-300 rounded-lg p-2 h-15 placeholder-black"
                         />
                         <div className="flex gap-0 mt-2">
                             <button className="text-sm text-gray-600 hover:underline">Half</button>
