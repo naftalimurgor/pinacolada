@@ -1,13 +1,14 @@
 "use client";
 
 import React from 'react';
-import { SpeakerIcon,MenuBarIcon, UnionIcon} from '@/component/Icons';
+import { SpeakerIcon, MenuBarIcon, UnionIcon } from '@/component/Icons';
 
 interface NavigationBarProps {
     onMenuClick: (e: React.MouseEvent) => void;
+    isOverlayOpen: boolean
 }
 
-const NavigationBar: React.FC<NavigationBarProps> = ({ onMenuClick }) => {
+const NavigationBar: React.FC<NavigationBarProps> = ({ onMenuClick, isOverlayOpen }) => {
     return (
         <div className="absolute top-0 left-0 w-full flex justify-between items-center p-4">
             <div className="flex justify-start">
@@ -20,7 +21,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ onMenuClick }) => {
                 tabIndex={0}
                 aria-label="Open menu"
             >
-                <MenuBarIcon />
+                {isOverlayOpen ? null : (<MenuBarIcon />)}
             </div>
             <div className="flex justify-end">
                 <SpeakerIcon />

@@ -1,13 +1,16 @@
 import React from 'react';
-import Tabs from '../Tabs'; 
-import UnionIcon from '../Icons/Union'; 
+import Tabs from '../Tabs';
+import UnionIcon from '../Icons/Union';
+import Link from 'next/link';
 
 
 const HeaderContent: React.FC = () => {
     return (
         <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
             <div className="text-white font-extrabold text-lg flex items-center justify-center lg:justify-start w-full lg:w-auto">
-                <UnionIcon />
+                <Link href='/'>
+                    <UnionIcon />
+                </Link>
             </div>
             <div className="flex-1 w-full lg:w-auto flex justify-center lg:justify-center">
                 <Tabs />
