@@ -16,7 +16,7 @@ interface PoolInfoProps {
 
 const PoolInfo: React.FC<PoolInfoProps> = ({ pool, onAddLiquidity }) => (
     <div>
-        <div className="p-6 bg-white rounded-xl border border-gray-200 shadow-xs">
+        <div className="p-6 bg-white rounded-xl border border-gray-200 shadow-2xs">
             <div className="flex items-center justify-between mb-4 h-[50px]">
                 <div className="flex items-center space-x-2">
                     <div className="flex -space-x-1">

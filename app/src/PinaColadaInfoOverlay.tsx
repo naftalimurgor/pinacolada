@@ -148,7 +148,7 @@ const PinaColadaInfoOverlay: React.FC<PinaColadaInfoOverlayProps> = ({ isOpen, o
                                 onIslandLeave={() => setHoveredIsland(null)}
                             />
                             {hoveredIsland && (
-                                <div className="fade-up absolute bottom-0 left-0 bg-black bg-opacity-75 text-white p-2 rounded">
+                                <div className="fade-up absolute bottom-0 left-0 bg-black bg-opacity-75 text-white p-2 rounded-sm">
                                     {hoveredIsland} <br /> A Liquid Staking destination coming soon!
                                 </div>
                             )}
