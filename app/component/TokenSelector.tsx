@@ -80,7 +80,7 @@ const TokenSelector: React.FC<TokenSelectorProps> = ({ token, onTokenChange }) =
                             filteredTokens.map((t, index) => (
                                 <div
                                     key={index}
-                                    className="flex items-center justify-between space-x-2 p-2 hover:bg-gray-100 cursor-pointer rounded-lg shadow-xs"
+                                    className="flex items-center justify-between space-x-2 p-2 hover:bg-gray-100 cursor-pointer rounded-lg shadow-2xs"
                                     onClick={() => handleTokenClick(t)}
                                 >
                                     <div className="flex items-center space-x-2">
