@@ -11,6 +11,7 @@ const permanentMarker = Permanent_Marker({
   subsets: ['latin'],
   weight: '400',
   style: 'normal',
+  display: 'swap'
 });
 
 const HomePage: React.FC = () => {
